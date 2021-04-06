@@ -1,8 +1,6 @@
 package cn.zhen77.service;
 
-import cn.zhen77.pojoi.Admin;
-
-import java.util.List;
+import cn.zhen77.pojo.Admin;
 
 /**
  * @author : zhen77

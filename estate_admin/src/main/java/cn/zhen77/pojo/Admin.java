@@ -1,8 +1,6 @@
-package cn.zhen77.pojoi;
+package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-
-import javax.naming.Name;
 
 /**
  * @author : zhen77

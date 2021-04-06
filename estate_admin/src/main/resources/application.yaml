@@ -14,9 +14,10 @@ mybatis:
   mapper-locations: classpath:cn/zhen77/mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true  #驼峰命名
+  type-aliases-package: cn.zhen77.pojo
 #sql语句日志打印
 logging:
   level:
-    org:
+    cn:
       zhen77:
         mapper: debug

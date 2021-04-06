@@ -1,6 +1,6 @@
 package cn.zhen77.mapper;
 
-import cn.zhen77.pojoi.Admin;
+import cn.zhen77.pojo.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

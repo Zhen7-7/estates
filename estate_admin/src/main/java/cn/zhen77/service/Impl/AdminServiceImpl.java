@@ -1,13 +1,11 @@
 package cn.zhen77.service.Impl;
 
 import cn.zhen77.mapper.AdminMapper;
-import cn.zhen77.pojoi.Admin;
+import cn.zhen77.pojo.Admin;
 import cn.zhen77.service.AdminService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * @author : zhen77
