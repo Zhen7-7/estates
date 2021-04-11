@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zhen77.mapper.EstateMapper" >
+  <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Estate" >
+    <id column="estateid" property="estateid" jdbcType="INTEGER" />
+    <result column="estatename" property="estatename" jdbcType="VARCHAR" />
+    <result column="estateimg" property="estateimg" jdbcType="VARCHAR" />
+    <result column="estateaddress" property="estateaddress" jdbcType="VARCHAR" />
+    <result column="estateallnum" property="estateallnum" jdbcType="INTEGER" />
+    <result column="estatelastnum" property="estatelastnum" jdbcType="INTEGER" />
+    <result column="Company" property="company" jdbcType="VARCHAR" />
+    <result column="Buildingnum" property="buildingnum" jdbcType="INTEGER" />
+    <result column="Price" property="price" jdbcType="DOUBLE" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    estateid, estatename, estateimg, estateaddress, estateallnum, estatelastnum, Company,
+    Buildingnum, Price, city
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from estate
+    where estateid = #{estateid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from estate
+    where estateid = #{estateid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.zhen77.pojo.Estate" >
+    insert into estate (estateid, estatename, estateimg,
+      estateaddress, estateallnum, estatelastnum,
+      Company, Buildingnum, Price,
+      city)
+    values (#{estateid,jdbcType=INTEGER}, #{estatename,jdbcType=VARCHAR}, #{estateimg,jdbcType=VARCHAR},
+      #{estateaddress,jdbcType=VARCHAR}, #{estateallnum,jdbcType=INTEGER}, #{estatelastnum,jdbcType=INTEGER},
+      #{company,jdbcType=VARCHAR}, #{buildingnum,jdbcType=INTEGER}, #{price,jdbcType=DOUBLE},
+      #{city,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zhen77.pojo.Estate" >
+    insert into estate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="estateid != null" >
+        estateid,
+      </if>
+      <if test="estatename != null" >
+        estatename,
+      </if>
+      <if test="estateimg != null" >
+        estateimg,
+      </if>
+      <if test="estateaddress != null" >
+        estateaddress,
+      </if>
+      <if test="estateallnum != null" >
+        estateallnum,
+      </if>
+      <if test="estatelastnum != null" >
+        estatelastnum,
+      </if>
+      <if test="company != null" >
+        Company,
+      </if>
+      <if test="buildingnum != null" >
+        Buildingnum,
+      </if>
+      <if test="price != null" >
+        Price,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="estateid != null" >
+        #{estateid,jdbcType=INTEGER},
+      </if>
+      <if test="estatename != null" >
+        #{estatename,jdbcType=VARCHAR},
+      </if>
+      <if test="estateimg != null" >
+        #{estateimg,jdbcType=VARCHAR},
+      </if>
+      <if test="estateaddress != null" >
+        #{estateaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="estateallnum != null" >
+        #{estateallnum,jdbcType=INTEGER},
+      </if>
+      <if test="estatelastnum != null" >
+        #{estatelastnum,jdbcType=INTEGER},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingnum != null" >
+        #{buildingnum,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zhen77.pojo.Estate" >
+    update estate
+    <set >
+      <if test="estatename != null" >
+        estatename = #{estatename,jdbcType=VARCHAR},
+      </if>
+      <if test="estateimg != null" >
+        estateimg = #{estateimg,jdbcType=VARCHAR},
+      </if>
+      <if test="estateaddress != null" >
+        estateaddress = #{estateaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="estateallnum != null" >
+        estateallnum = #{estateallnum,jdbcType=INTEGER},
+      </if>
+      <if test="estatelastnum != null" >
+        estatelastnum = #{estatelastnum,jdbcType=INTEGER},
+      </if>
+      <if test="company != null" >
+        Company = #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="buildingnum != null" >
+        Buildingnum = #{buildingnum,jdbcType=INTEGER},
+      </if>
+      <if test="price != null" >
+        Price = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where estateid = #{estateid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zhen77.pojo.Estate" >
+    update estate
+    set estatename = #{estatename,jdbcType=VARCHAR},
+      estateimg = #{estateimg,jdbcType=VARCHAR},
+      estateaddress = #{estateaddress,jdbcType=VARCHAR},
+      estateallnum = #{estateallnum,jdbcType=INTEGER},
+      estatelastnum = #{estatelastnum,jdbcType=INTEGER},
+      Company = #{company,jdbcType=VARCHAR},
+      Buildingnum = #{buildingnum,jdbcType=INTEGER},
+      Price = #{price,jdbcType=DOUBLE},
+      city = #{city,jdbcType=VARCHAR}
+    where estateid = #{estateid,jdbcType=INTEGER}
+  </update>
+  <resultMap id="selectAllMap" type="cn.zhen77.pojo.Estate" >
+    <id column="estateid" property="estateid" jdbcType="INTEGER" />
+    <result column="estatename" property="estatename" jdbcType="VARCHAR" />
+    <result column="estateimg" property="estateimg" jdbcType="VARCHAR" />
+    <result column="estateaddress" property="estateaddress" jdbcType="VARCHAR" />
+    <result column="estateallnum" property="estateallnum" jdbcType="INTEGER" />
+    <result column="estatelastnum" property="estatelastnum" jdbcType="INTEGER" />
+    <result column="Company" property="company" jdbcType="VARCHAR" />
+    <result column="Buildingnum" property="buildingnum" jdbcType="INTEGER" />
+    <result column="Price" property="price" jdbcType="DOUBLE" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+  </resultMap>
+  <select id="selectAll" resultMap="selectAllMap" >
+    select * from estate;
+  </select>
+</mapper>

@@ -5,6 +5,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>estate_admin</module>
+        <module>estate_API</module>
+        <module>estate_user</module>
     </modules>
     <parent>
 		<groupId>org.springframework.boot</groupId>
@@ -101,5 +103,6 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 </project>
