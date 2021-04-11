@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.zhen77.mapper.BuildingMapper" >
+  <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Building" >
+    <id column="buildingid" property="buildingid" jdbcType="INTEGER" />
+    <result column="estateid" property="estateid" jdbcType="INTEGER" />
+    <result column="housingunitnum" property="housingunitnum" jdbcType="INTEGER" />
+    <result column="buildingfloornum" property="buildingfloornum" jdbcType="INTEGER" />
+    <result column="haselevator" property="haselevator" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    buildingid, estateid, housingunitnum, buildingfloornum, haselevator
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from building
+    where buildingid = #{buildingid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from building
+    where buildingid = #{buildingid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.zhen77.pojo.Building" >
+    insert into building (buildingid, estateid, housingunitnum, 
+      buildingfloornum, haselevator)
+    values (#{buildingid,jdbcType=INTEGER}, #{estateid,jdbcType=INTEGER}, #{housingunitnum,jdbcType=INTEGER}, 
+      #{buildingfloornum,jdbcType=INTEGER}, #{haselevator,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.zhen77.pojo.Building" >
+    insert into building
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="buildingid != null" >
+        buildingid,
+      </if>
+      <if test="estateid != null" >
+        estateid,
+      </if>
+      <if test="housingunitnum != null" >
+        housingunitnum,
+      </if>
+      <if test="buildingfloornum != null" >
+        buildingfloornum,
+      </if>
+      <if test="haselevator != null" >
+        haselevator,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="buildingid != null" >
+        #{buildingid,jdbcType=INTEGER},
+      </if>
+      <if test="estateid != null" >
+        #{estateid,jdbcType=INTEGER},
+      </if>
+      <if test="housingunitnum != null" >
+        #{housingunitnum,jdbcType=INTEGER},
+      </if>
+      <if test="buildingfloornum != null" >
+        #{buildingfloornum,jdbcType=INTEGER},
+      </if>
+      <if test="haselevator != null" >
+        #{haselevator,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.zhen77.pojo.Building" >
+    update building
+    <set >
+      <if test="estateid != null" >
+        estateid = #{estateid,jdbcType=INTEGER},
+      </if>
+      <if test="housingunitnum != null" >
+        housingunitnum = #{housingunitnum,jdbcType=INTEGER},
+      </if>
+      <if test="buildingfloornum != null" >
+        buildingfloornum = #{buildingfloornum,jdbcType=INTEGER},
+      </if>
+      <if test="haselevator != null" >
+        haselevator = #{haselevator,jdbcType=BIT},
+      </if>
+    </set>
+    where buildingid = #{buildingid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.zhen77.pojo.Building" >
+    update building
+    set estateid = #{estateid,jdbcType=INTEGER},
+      housingunitnum = #{housingunitnum,jdbcType=INTEGER},
+      buildingfloornum = #{buildingfloornum,jdbcType=INTEGER},
+      haselevator = #{haselevator,jdbcType=BIT}
+    where buildingid = #{buildingid,jdbcType=INTEGER}
+  </update>
+</mapper>
