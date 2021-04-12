@@ -1,9 +1,15 @@
 package cn.zhen77.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 public class Building {
+
     private Integer buildingid;
 
     private Integer estateid;
+
+    private String buildingimg;
 
     private Integer housingunitnum;
 
@@ -27,6 +33,14 @@ public class Building {
         this.estateid = estateid;
     }
 
+    public String getBuildingimg() {
+        return buildingimg;
+    }
+
+    public void setBuildingimg(String buildingimg) {
+        this.buildingimg = buildingimg == null ? null : buildingimg.trim();
+    }
+
     public Integer getHousingunitnum() {
         return housingunitnum;
     }
@@ -48,24 +62,6 @@ public class Building {
     }
 
     public void setHaselevator(Boolean haselevator) {
-        this.haselevator = haselevator;
-    }
-
-    public Building() {
-    }
-
-    public Building(Integer estateid, Integer housingunitnum, Integer buildingfloornum, Boolean haselevator) {
-        this.estateid = estateid;
-        this.housingunitnum = housingunitnum;
-        this.buildingfloornum = buildingfloornum;
-        this.haselevator = haselevator;
-    }
-
-    public Building(Integer buildingid, Integer estateid, Integer housingunitnum, Integer buildingfloornum, Boolean haselevator) {
-        this.buildingid = buildingid;
-        this.estateid = estateid;
-        this.housingunitnum = housingunitnum;
-        this.buildingfloornum = buildingfloornum;
         this.haselevator = haselevator;
     }
 }

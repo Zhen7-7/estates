@@ -165,4 +165,7 @@
   <select id="selectAll" resultMap="selectAllMap" >
     select * from estate;
   </select>
+  <select id="selectByEstateid" resultType="cn.zhen77.pojo.Estate" parameterType="java.lang.Integer" >
+    select * from estate where estateid = #{estateid};
+  </select>
 </mapper>

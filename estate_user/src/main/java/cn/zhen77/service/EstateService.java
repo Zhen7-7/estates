@@ -22,4 +22,9 @@ public class EstateService {
         List<Estate> list= estateMapper.selectAll();
         return list;
     }
+    public Estate selectByEstate(Integer estateid) {
+        Estate estate= estateMapper.selectByEstateid(estateid);
+        return estate;
+    }
+
 }

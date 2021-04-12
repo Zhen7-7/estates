@@ -140,24 +140,4 @@ public class Housing {
     public void setHousingfinish(Boolean housingfinish) {
         this.housingfinish = housingfinish;
     }
-
-    public Housing() {
-    }
-
-    public Housing(Integer housingid, Integer buildingid, String housingimga, String housingimgb, String housingimgc, String housingimgd, String housingimge, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom, Boolean housingfinish) {
-        this.housingid = housingid;
-        this.buildingid = buildingid;
-        this.housingimga = housingimga;
-        this.housingimgb = housingimgb;
-        this.housingimgc = housingimgc;
-        this.housingimgd = housingimgd;
-        this.housingimge = housingimge;
-        this.housingtype = housingtype;
-        this.housingarea = housingarea;
-        this.housingrealarea = housingrealarea;
-        this.housingprice = housingprice;
-        this.housingunit = housingunit;
-        this.housingroom = housingroom;
-        this.housingfinish = housingfinish;
-    }
 }

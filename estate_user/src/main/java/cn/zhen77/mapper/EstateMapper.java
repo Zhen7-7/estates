@@ -20,4 +20,7 @@ public interface EstateMapper extends BaseMapper<Estate> {
     int updateByPrimaryKey(Estate record);
 
     public List<Estate> selectAll();
+
+    public Estate selectByEstateid(int estateid);
+
 }

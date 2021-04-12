@@ -17,3 +17,4 @@ public class Application {
         SpringApplication.run(Application.class,args);
     }
 }
+//http://localhost/index.html?param1=value1&param2=value2

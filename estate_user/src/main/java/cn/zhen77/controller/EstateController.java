@@ -24,4 +24,9 @@ public class EstateController {
         List<Estate> list = estateService.selectAllEstate();
         return list;
     }
+    @RequestMapping("/getEstateById")
+    public Estate selectByEstateid(Integer estateid){
+        Estate estate = estateService.selectByEstate(estateid);
+        return estate;
+    }
 }
