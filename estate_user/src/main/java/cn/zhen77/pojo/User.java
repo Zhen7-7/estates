@@ -13,8 +13,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 @TableName("user")
 public class User {
     @TableId(value = "id",type = IdType.AUTO)
-    private int userid;
     private String username;
+    private int userid;
     private String password;
     private String phone;
     private String realname;

@@ -4,11 +4,7 @@
   <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Housing" >
     <id column="housingid" property="housingid" jdbcType="INTEGER" />
     <result column="buildingid" property="buildingid" jdbcType="INTEGER" />
-    <result column="housingimga" property="housingimga" jdbcType="VARCHAR" />
-    <result column="housingimgb" property="housingimgb" jdbcType="VARCHAR" />
-    <result column="housingimgc" property="housingimgc" jdbcType="VARCHAR" />
-    <result column="housingimgd" property="housingimgd" jdbcType="VARCHAR" />
-    <result column="housingimge" property="housingimge" jdbcType="VARCHAR" />
+    <result column="housingimgid" property="housingimgid" jdbcType="INTEGER" />
     <result column="housingtype" property="housingtype" jdbcType="VARCHAR" />
     <result column="housingarea" property="housingarea" jdbcType="INTEGER" />
     <result column="housingrealarea" property="housingrealarea" jdbcType="INTEGER" />
@@ -18,9 +14,8 @@
     <result column="housingfinish" property="housingfinish" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    housingid, buildingid, housingimga, housingimgb, housingimgc, housingimgd, housingimge, 
-    housingtype, housingarea, housingrealarea, housingprice, housingunit, housingroom, 
-    housingfinish
+    housingid, buildingid, housingimgid, housingtype, housingarea, housingrealarea, housingprice, 
+    housingunit, housingroom, housingfinish
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -33,16 +28,14 @@
     where housingid = #{housingid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="cn.zhen77.pojo.Housing" >
-    insert into housing (housingid, buildingid, housingimga, 
-      housingimgb, housingimgc, housingimgd, 
-      housingimge, housingtype, housingarea, 
-      housingrealarea, housingprice, housingunit, 
-      housingroom, housingfinish)
-    values (#{housingid,jdbcType=INTEGER}, #{buildingid,jdbcType=INTEGER}, #{housingimga,jdbcType=VARCHAR}, 
-      #{housingimgb,jdbcType=VARCHAR}, #{housingimgc,jdbcType=VARCHAR}, #{housingimgd,jdbcType=VARCHAR}, 
-      #{housingimge,jdbcType=VARCHAR}, #{housingtype,jdbcType=VARCHAR}, #{housingarea,jdbcType=INTEGER}, 
-      #{housingrealarea,jdbcType=INTEGER}, #{housingprice,jdbcType=DOUBLE}, #{housingunit,jdbcType=INTEGER}, 
-      #{housingroom,jdbcType=INTEGER}, #{housingfinish,jdbcType=BIT})
+    insert into housing (housingid, buildingid, housingimgid, 
+      housingtype, housingarea, housingrealarea, 
+      housingprice, housingunit, housingroom, 
+      housingfinish)
+    values (#{housingid,jdbcType=INTEGER}, #{buildingid,jdbcType=INTEGER}, #{housingimgid,jdbcType=INTEGER}, 
+      #{housingtype,jdbcType=VARCHAR}, #{housingarea,jdbcType=INTEGER}, #{housingrealarea,jdbcType=INTEGER}, 
+      #{housingprice,jdbcType=DOUBLE}, #{housingunit,jdbcType=INTEGER}, #{housingroom,jdbcType=INTEGER}, 
+      #{housingfinish,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="cn.zhen77.pojo.Housing" >
     insert into housing
@@ -53,20 +46,8 @@
       <if test="buildingid != null" >
         buildingid,
       </if>
-      <if test="housingimga != null" >
-        housingimga,
-      </if>
-      <if test="housingimgb != null" >
-        housingimgb,
-      </if>
-      <if test="housingimgc != null" >
-        housingimgc,
-      </if>
-      <if test="housingimgd != null" >
-        housingimgd,
-      </if>
-      <if test="housingimge != null" >
-        housingimge,
+      <if test="housingimgid != null" >
+        housingimgid,
       </if>
       <if test="housingtype != null" >
         housingtype,
@@ -97,20 +78,8 @@
       <if test="buildingid != null" >
         #{buildingid,jdbcType=INTEGER},
       </if>
-      <if test="housingimga != null" >
-        #{housingimga,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimgb != null" >
-        #{housingimgb,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimgc != null" >
-        #{housingimgc,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimgd != null" >
-        #{housingimgd,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimge != null" >
-        #{housingimge,jdbcType=VARCHAR},
+      <if test="housingimgid != null" >
+        #{housingimgid,jdbcType=INTEGER},
       </if>
       <if test="housingtype != null" >
         #{housingtype,jdbcType=VARCHAR},
@@ -141,20 +110,8 @@
       <if test="buildingid != null" >
         buildingid = #{buildingid,jdbcType=INTEGER},
       </if>
-      <if test="housingimga != null" >
-        housingimga = #{housingimga,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimgb != null" >
-        housingimgb = #{housingimgb,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimgc != null" >
-        housingimgc = #{housingimgc,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimgd != null" >
-        housingimgd = #{housingimgd,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimge != null" >
-        housingimge = #{housingimge,jdbcType=VARCHAR},
+      <if test="housingimgid != null" >
+        housingimgid = #{housingimgid,jdbcType=INTEGER},
       </if>
       <if test="housingtype != null" >
         housingtype = #{housingtype,jdbcType=VARCHAR},
@@ -183,11 +140,7 @@
   <update id="updateByPrimaryKey" parameterType="cn.zhen77.pojo.Housing" >
     update housing
     set buildingid = #{buildingid,jdbcType=INTEGER},
-      housingimga = #{housingimga,jdbcType=VARCHAR},
-      housingimgb = #{housingimgb,jdbcType=VARCHAR},
-      housingimgc = #{housingimgc,jdbcType=VARCHAR},
-      housingimgd = #{housingimgd,jdbcType=VARCHAR},
-      housingimge = #{housingimge,jdbcType=VARCHAR},
+      housingimgid = #{housingimgid,jdbcType=INTEGER},
       housingtype = #{housingtype,jdbcType=VARCHAR},
       housingarea = #{housingarea,jdbcType=INTEGER},
       housingrealarea = #{housingrealarea,jdbcType=INTEGER},
@@ -197,4 +150,34 @@
       housingfinish = #{housingfinish,jdbcType=BIT}
     where housingid = #{housingid,jdbcType=INTEGER}
   </update>
+
+
+  <resultMap id="getHousingdetails" type="cn.zhen77.pojo.Housing" >
+    <id column="housingid" property="housingid" jdbcType="INTEGER" />
+    <result column="buildingid" property="buildingid" jdbcType="INTEGER" />
+    <result column="housingimgid" property="housingimgid" jdbcType="INTEGER" />
+    <result column="housingtype" property="housingtype" jdbcType="VARCHAR" />
+    <result column="housingarea" property="housingarea" jdbcType="INTEGER" />
+    <result column="housingrealarea" property="housingrealarea" jdbcType="INTEGER" />
+    <result column="housingprice" property="housingprice" jdbcType="DOUBLE" />
+    <result column="housingunit" property="housingunit" jdbcType="INTEGER" />
+    <result column="housingroom" property="housingroom" jdbcType="INTEGER" />
+    <result column="housingfinish" property="housingfinish" jdbcType="BIT" />
+    <association property="housingimg" javaType="cn.zhen77.pojo.Housingimg" >
+      <id column="housingimgid" property="housingimgid" jdbcType="INTEGER" />
+      <result column="housingimg1" property="housingimg1" jdbcType="VARCHAR" />
+      <result column="housingimg2" property="housingimg2" jdbcType="VARCHAR" />
+      <result column="housingimg3" property="housingimg3" jdbcType="VARCHAR" />
+      <result column="housingimg4" property="housingimg4" jdbcType="VARCHAR" />
+      <result column="housingimg5" property="housingimg5" jdbcType="VARCHAR" />
+    </association>
+  </resultMap>
+  <select id="getHousing" parameterType="java.lang.Integer" resultMap="getHousingdetails">
+       select h.*,i.housingimg1,i.housingimg2,i.housingimg3,i.housingimg4,i.housingimg5
+        from  housing h
+        inner join housingimg i
+        on (h.housingimgid = i.housingimgid)
+        WHERE h.buildingid =1;
+
+  </select>
 </mapper>

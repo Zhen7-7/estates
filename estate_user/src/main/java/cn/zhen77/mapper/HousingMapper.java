@@ -1,9 +1,8 @@
 package cn.zhen77.mapper;
 
 import cn.zhen77.pojo.Housing;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface HousingMapper extends BaseMapper<Housing> {
+public interface HousingMapper {
     int deleteByPrimaryKey(Integer housingid);
 
     int insert(Housing record);
@@ -15,4 +14,6 @@ public interface HousingMapper extends BaseMapper<Housing> {
     int updateByPrimaryKeySelective(Housing record);
 
     int updateByPrimaryKey(Housing record);
+
+    Housing getHousing(Integer buildingid);
 }

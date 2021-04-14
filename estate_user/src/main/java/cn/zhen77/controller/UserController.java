@@ -43,9 +43,11 @@ public class UserController {
             result = password.equals(user.getPassword());
         } catch (Exception e) {
             e.printStackTrace();
+        }finally {
+            System.out.println(result);
+            return result;
+
         }
-        System.out.println(result);
-        return result;
     }
     @RequestMapping("/getUser")
     public User getUser(String username){

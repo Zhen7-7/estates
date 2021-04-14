@@ -1,19 +1,15 @@
 package cn.zhen77.pojo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+
 public class Housing {
+    @TableId(value = "id",type = IdType.AUTO)
     private Integer housingid;
 
     private Integer buildingid;
 
-    private String housingimga;
-
-    private String housingimgb;
-
-    private String housingimgc;
-
-    private String housingimgd;
-
-    private String housingimge;
+    private Integer housingimgid;
 
     private String housingtype;
 
@@ -28,6 +24,22 @@ public class Housing {
     private Integer housingroom;
 
     private Boolean housingfinish;
+
+    private Housingimg housingimg;
+
+    public Housing(Integer housingid, Integer buildingid, Integer housingimgid, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom, Boolean housingfinish, Housingimg housingimg) {
+        this.housingid = housingid;
+        this.buildingid = buildingid;
+        this.housingimgid = housingimgid;
+        this.housingtype = housingtype;
+        this.housingarea = housingarea;
+        this.housingrealarea = housingrealarea;
+        this.housingprice = housingprice;
+        this.housingunit = housingunit;
+        this.housingroom = housingroom;
+        this.housingfinish = housingfinish;
+        this.housingimg = housingimg;
+    }
 
     public Integer getHousingid() {
         return housingid;
@@ -45,44 +57,12 @@ public class Housing {
         this.buildingid = buildingid;
     }
 
-    public String getHousingimga() {
-        return housingimga;
+    public Integer getHousingimgid() {
+        return housingimgid;
     }
 
-    public void setHousingimga(String housingimga) {
-        this.housingimga = housingimga == null ? null : housingimga.trim();
-    }
-
-    public String getHousingimgb() {
-        return housingimgb;
-    }
-
-    public void setHousingimgb(String housingimgb) {
-        this.housingimgb = housingimgb == null ? null : housingimgb.trim();
-    }
-
-    public String getHousingimgc() {
-        return housingimgc;
-    }
-
-    public void setHousingimgc(String housingimgc) {
-        this.housingimgc = housingimgc == null ? null : housingimgc.trim();
-    }
-
-    public String getHousingimgd() {
-        return housingimgd;
-    }
-
-    public void setHousingimgd(String housingimgd) {
-        this.housingimgd = housingimgd == null ? null : housingimgd.trim();
-    }
-
-    public String getHousingimge() {
-        return housingimge;
-    }
-
-    public void setHousingimge(String housingimge) {
-        this.housingimge = housingimge == null ? null : housingimge.trim();
+    public void setHousingimgid(Integer housingimgid) {
+        this.housingimgid = housingimgid;
     }
 
     public String getHousingtype() {
@@ -139,5 +119,21 @@ public class Housing {
 
     public void setHousingfinish(Boolean housingfinish) {
         this.housingfinish = housingfinish;
+    }
+
+    public Housing(Integer housingid, Integer buildingid, Integer housingimgid, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom, Boolean housingfinish) {
+        this.housingid = housingid;
+        this.buildingid = buildingid;
+        this.housingimgid = housingimgid;
+        this.housingtype = housingtype;
+        this.housingarea = housingarea;
+        this.housingrealarea = housingrealarea;
+        this.housingprice = housingprice;
+        this.housingunit = housingunit;
+        this.housingroom = housingroom;
+        this.housingfinish = housingfinish;
+    }
+
+    public Housing() {
     }
 }
