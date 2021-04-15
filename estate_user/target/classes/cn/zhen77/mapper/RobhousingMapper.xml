@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhen77.mapper.RobhousingMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Robhousing">
+        <id column="robid" property="robid" />
+        <result column="robtype" property="robtype" />
+        <result column="estateid" property="estateid" />
+        <result column="roballprice" property="roballprice" />
+        <result column="robdiscount" property="robdiscount" />
+        <result column="robarea" property="robarea" />
+        <result column="robbuildingid" property="robbuildingid" />
+        <result column="robunitid" property="robunitid" />
+        <result column="robroomid" property="robroomid" />
+        <result column="robphone" property="robphone" />
+        <result column="information" property="information" />
+        <result column="reason" property="reason" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        robid, robtype, estateid, roballprice, robdiscount, robarea, robbuildingid, robunitid, robroomid, robphone, information, reason
+    </sql>
+
+</mapper>

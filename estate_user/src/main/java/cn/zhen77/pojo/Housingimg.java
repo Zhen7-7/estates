@@ -76,4 +76,16 @@ public class Housingimg {
     public void setHousingimg5(String housingimg5) {
         this.housingimg5 = housingimg5 == null ? null : housingimg5.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Housingimg{" +
+                "housingimgid=" + housingimgid +
+                ", housingimg1='" + housingimg1 + '\'' +
+                ", housingimg2='" + housingimg2 + '\'' +
+                ", housingimg3='" + housingimg3 + '\'' +
+                ", housingimg4='" + housingimg4 + '\'' +
+                ", housingimg5='" + housingimg5 + '\'' +
+                '}';
+    }
 }

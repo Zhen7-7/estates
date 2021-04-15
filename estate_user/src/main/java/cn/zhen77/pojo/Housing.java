@@ -9,7 +9,7 @@ public class Housing {
 
     private Integer buildingid;
 
-    private Integer housingimgid;
+//    private Integer housingimgid;
 
     private String housingtype;
 
@@ -27,18 +27,23 @@ public class Housing {
 
     private Housingimg housingimg;
 
-    public Housing(Integer housingid, Integer buildingid, Integer housingimgid, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom, Boolean housingfinish, Housingimg housingimg) {
-        this.housingid = housingid;
-        this.buildingid = buildingid;
-        this.housingimgid = housingimgid;
-        this.housingtype = housingtype;
-        this.housingarea = housingarea;
-        this.housingrealarea = housingrealarea;
-        this.housingprice = housingprice;
-        this.housingunit = housingunit;
-        this.housingroom = housingroom;
-        this.housingfinish = housingfinish;
-        this.housingimg = housingimg;
+    public Housing() {
+    }
+
+    @Override
+    public String toString() {
+        return "Housing{" +
+                "housingid=" + housingid +
+                ", buildingid=" + buildingid +
+                ", housingtype='" + housingtype + '\'' +
+                ", housingarea=" + housingarea +
+                ", housingrealarea=" + housingrealarea +
+                ", housingprice=" + housingprice +
+                ", housingunit=" + housingunit +
+                ", housingroom=" + housingroom +
+                ", housingfinish=" + housingfinish +
+                ", housingimg=" + housingimg +
+                '}';
     }
 
     public Integer getHousingid() {
@@ -57,20 +62,12 @@ public class Housing {
         this.buildingid = buildingid;
     }
 
-    public Integer getHousingimgid() {
-        return housingimgid;
-    }
-
-    public void setHousingimgid(Integer housingimgid) {
-        this.housingimgid = housingimgid;
-    }
-
     public String getHousingtype() {
         return housingtype;
     }
 
     public void setHousingtype(String housingtype) {
-        this.housingtype = housingtype == null ? null : housingtype.trim();
+        this.housingtype = housingtype;
     }
 
     public Integer getHousingarea() {
@@ -121,10 +118,17 @@ public class Housing {
         this.housingfinish = housingfinish;
     }
 
-    public Housing(Integer housingid, Integer buildingid, Integer housingimgid, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom, Boolean housingfinish) {
+    public Housingimg getHousingimg() {
+        return housingimg;
+    }
+
+    public void setHousingimg(Housingimg housingimg) {
+        this.housingimg = housingimg;
+    }
+
+    public Housing(Integer housingid, Integer buildingid, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom, Boolean housingfinish, Housingimg housingimg) {
         this.housingid = housingid;
         this.buildingid = buildingid;
-        this.housingimgid = housingimgid;
         this.housingtype = housingtype;
         this.housingarea = housingarea;
         this.housingrealarea = housingrealarea;
@@ -132,8 +136,6 @@ public class Housing {
         this.housingunit = housingunit;
         this.housingroom = housingroom;
         this.housingfinish = housingfinish;
-    }
-
-    public Housing() {
+        this.housingimg = housingimg;
     }
 }

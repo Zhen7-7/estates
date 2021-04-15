@@ -1,30 +1,92 @@
 package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 
-public class Estate {
+import java.io.Serializable;
 
-    @TableId(value = "id",type = IdType.AUTO)
+/**
+ * <p>
+ * 
+ * </p>
+ *
+ * @author Zhen77
+ * @since 2021-04-15
+ */
+public class Estate implements Serializable {
+
+    private static final long serialVersionUID=1L;
+
+    /**
+     * 小区id
+     */
+    @TableId(value = "estateid", type = IdType.AUTO)
     private Integer estateid;
 
+    /**
+     * 小区名称
+     */
     private String estatename;
 
+    /**
+     * 图片
+     */
     private String estateimg;
 
+    /**
+     * 小区地址
+     */
     private String estateaddress;
 
+    /**
+     * 小区总户数
+     */
     private Integer estateallnum;
 
+    /**
+     * 小区剩余户数
+     */
     private Integer estatelastnum;
 
-    private String company;
+    /**
+     * 所属公司
+     */
+    @TableField("Company")
+    private String Company;
 
-    private Integer buildingnum;
+    /**
+     * 楼房数量
+     */
+    @TableField("Buildingnum")
+    private Integer Buildingnum;
 
-    private Double price;
+    /**
+     * 万元\m²
+     */
+    @TableField("Price")
+    private Double Price;
 
+    /**
+     * 城市
+     */
     private String city;
+
+    public Estate() {
+    }
+
+    public Estate(Integer estateid, String estatename, String estateimg, String estateaddress, Integer estateallnum, Integer estatelastnum, String company, Integer buildingnum, Double price, String city) {
+        this.estateid = estateid;
+        this.estatename = estatename;
+        this.estateimg = estateimg;
+        this.estateaddress = estateaddress;
+        this.estateallnum = estateallnum;
+        this.estatelastnum = estatelastnum;
+        Company = company;
+        Buildingnum = buildingnum;
+        Price = price;
+        this.city = city;
+    }
 
     public Integer getEstateid() {
         return estateid;
@@ -75,27 +137,27 @@ public class Estate {
     }
 
     public String getCompany() {
-        return company;
+        return Company;
     }
 
-    public void setCompany(String company) {
-        this.company = company;
+    public void setCompany(String Company) {
+        this.Company = Company;
     }
 
     public Integer getBuildingnum() {
-        return buildingnum;
+        return Buildingnum;
     }
 
-    public void setBuildingnum(Integer buildingnum) {
-        this.buildingnum = buildingnum;
+    public void setBuildingnum(Integer Buildingnum) {
+        this.Buildingnum = Buildingnum;
     }
 
     public Double getPrice() {
-        return price;
+        return Price;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setPrice(Double Price) {
+        this.Price = Price;
     }
 
     public String getCity() {
@@ -106,31 +168,19 @@ public class Estate {
         this.city = city;
     }
 
-    public Estate(String estatename, String estateimg, String estateaddress, Integer estateallnum, Integer estatelastnum, String company, Integer buildingnum, Double price, String city) {
-        this.estatename = estatename;
-        this.estateimg = estateimg;
-        this.estateaddress = estateaddress;
-        this.estateallnum = estateallnum;
-        this.estatelastnum = estatelastnum;
-        this.company = company;
-        this.buildingnum = buildingnum;
-        this.price = price;
-        this.city = city;
-    }
-
-    public Estate(Integer estateid, String estatename, String estateimg, String estateaddress, Integer estateallnum, Integer estatelastnum, String company, Integer buildingnum, Double price, String city) {
-        this.estateid = estateid;
-        this.estatename = estatename;
-        this.estateimg = estateimg;
-        this.estateaddress = estateaddress;
-        this.estateallnum = estateallnum;
-        this.estatelastnum = estatelastnum;
-        this.company = company;
-        this.buildingnum = buildingnum;
-        this.price = price;
-        this.city = city;
-    }
-
-    public Estate() {
+    @Override
+    public String toString() {
+        return "Estate{" +
+        "estateid=" + estateid +
+        ", estatename=" + estatename +
+        ", estateimg=" + estateimg +
+        ", estateaddress=" + estateaddress +
+        ", estateallnum=" + estateallnum +
+        ", estatelastnum=" + estatelastnum +
+        ", Company=" + Company +
+        ", Buildingnum=" + Buildingnum +
+        ", Price=" + Price +
+        ", city=" + city +
+        "}";
     }
 }

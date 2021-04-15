@@ -155,7 +155,7 @@
   <resultMap id="getHousingdetails" type="cn.zhen77.pojo.Housing" >
     <id column="housingid" property="housingid" jdbcType="INTEGER" />
     <result column="buildingid" property="buildingid" jdbcType="INTEGER" />
-    <result column="housingimgid" property="housingimgid" jdbcType="INTEGER" />
+
     <result column="housingtype" property="housingtype" jdbcType="VARCHAR" />
     <result column="housingarea" property="housingarea" jdbcType="INTEGER" />
     <result column="housingrealarea" property="housingrealarea" jdbcType="INTEGER" />
@@ -173,11 +173,11 @@
     </association>
   </resultMap>
   <select id="getHousing" parameterType="java.lang.Integer" resultMap="getHousingdetails">
-       select h.*,i.housingimg1,i.housingimg2,i.housingimg3,i.housingimg4,i.housingimg5
+       select h.*,i.*
         from  housing h
         inner join housingimg i
         on (h.housingimgid = i.housingimgid)
-        WHERE h.buildingid =1;
+        WHERE h.buildingid =#{buildingid};
 
   </select>
 </mapper>

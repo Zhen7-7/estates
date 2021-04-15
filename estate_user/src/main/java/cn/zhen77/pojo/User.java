@@ -2,28 +2,61 @@ package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+
+import java.io.Serializable;
 
 /**
- * @author : zhen77
- * @date: 2021/4/10 - 04 - 10 - 10:35
- * @Description: cn.zhen77.pojo
- * @version: 1.0
+ * <p>
+ * 
+ * </p>
+ *
+ * @author Zhen77
+ * @since 2021-04-15
  */
-@TableName("user")
-public class User {
-    @TableId(value = "id",type = IdType.AUTO)
+public class User implements Serializable {
+
+    private static final long serialVersionUID=1L;
+
+    /**
+     * 用户id
+     */
+    @TableId(value = "userid", type = IdType.AUTO)
+    private Integer userid;
+
+    /**
+     * 用户名
+     */
     private String username;
-    private int userid;
+
+    /**
+     * 密码
+     */
     private String password;
+
+    /**
+     * 手机号
+     */
     private String phone;
+
+    /**
+     * 真是姓名
+     */
     private String realname;
+
+    /**
+     * 身份证号
+     */
     private String identity;
+
+    /**
+     * 地址
+     */
     private String address;
 
+    public User() {
+    }
 
-    public User( String username, String password, String phone, String realname, String identity, String address) {
-
+    public User(String username, String password, String phone, String realname, String identity, String address) {
         this.username = username;
         this.password = password;
         this.phone = phone;
@@ -32,28 +65,22 @@ public class User {
         this.address = address;
     }
 
-    public User() {
+    public User(Integer userid, String username, String password, String phone, String realname, String identity, String address) {
+        this.userid = userid;
+        this.username = username;
+        this.password = password;
+        this.phone = phone;
+        this.realname = realname;
+        this.identity = identity;
+        this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + userid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", realname='" + realname + '\'' +
-                ", identity='" + identity + '\'' +
-                ", address='" + address + '\'' +
-                '}';
-    }
-
-    public int getId() {
+    public Integer getUserid() {
         return userid;
     }
 
-    public void setId(int id) {
-        this.userid = id;
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 
     public String getUsername() {
@@ -102,5 +129,18 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+        "userid=" + userid +
+        ", username=" + username +
+        ", password=" + password +
+        ", phone=" + phone +
+        ", realname=" + realname +
+        ", identity=" + identity +
+        ", address=" + address +
+        "}";
     }
 }
