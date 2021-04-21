@@ -25,7 +25,7 @@ public class UserController {
     @RequestMapping("/register")
 
     public int register(String username,String password,String phone,String realname,String identity,String address){
-        User user = new User("孙朕","123456","132454644","suznhen","46546545465","china");
+//        User user = new User("孙朕","123456","132454644","suznhen","46546545465","china");
         User demo = new User(username,password,phone,realname,identity,address);
         Integer result = userService.insertUser(demo);
         System.out.println(result);

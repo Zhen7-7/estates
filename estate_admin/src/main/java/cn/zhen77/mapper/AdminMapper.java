@@ -4,10 +4,12 @@ import cn.zhen77.pojo.Admin;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * @author : zhen77
- * @date: 2021/3/22 - 03 - 22 - 22:56
- * @Description: cn.zhen77.mapper
- * @version: 1.0
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author Zhen77
+ * @since 2021-04-20
  */
 public interface AdminMapper extends BaseMapper<Admin> {
 
