@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhen77.mapper.SuggestMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Suggest">
+        <id column="suggestid" property="suggestid" />
+        <result column="suggesttype" property="suggesttype" />
+        <result column="suggestcontent" property="suggestcontent" />
+        <result column="userid" property="userid" />
+        <result column="suggestimg1" property="suggestimg1" />
+        <result column="suggestimg2" property="suggestimg2" />
+        <result column="suggestimg3" property="suggestimg3" />
+        <result column="suggestimg4" property="suggestimg4" />
+        <result column="suggestimg5" property="suggestimg5" />
+        <result column="suggestimg6" property="suggestimg6" />
+        <result column="suggestimg7" property="suggestimg7" />
+        <result column="suggestimg8" property="suggestimg8" />
+        <result column="suggestimg9" property="suggestimg9" />
+        <result column="issolve" property="issolve" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        suggestid, suggesttype, suggestcontent, userid, suggestimg1, suggestimg2, suggestimg3, suggestimg4, suggestimg5, suggestimg6, suggestimg7, suggestimg8, suggestimg9, issolve
+    </sql>
+
+</mapper>
