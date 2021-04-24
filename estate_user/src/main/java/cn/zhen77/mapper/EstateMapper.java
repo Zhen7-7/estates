@@ -5,22 +5,18 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 import java.util.List;
 
-
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author Zhen77
+ * @since 2021-04-22
+ */
 public interface EstateMapper extends BaseMapper<Estate> {
-    int deleteByPrimaryKey(Integer estateid);
-
-    int insert(Estate record);
-
-    int insertSelective(Estate record);
-
-    Estate selectByPrimaryKey(Integer estateid);
-
-    int updateByPrimaryKeySelective(Estate record);
-
-    int updateByPrimaryKey(Estate record);
-
     public List<Estate> selectAll();
 
     public Estate selectByEstateid(int estateid);
 
+//    public List<Estate> selectEstateByAddress(String address);
 }

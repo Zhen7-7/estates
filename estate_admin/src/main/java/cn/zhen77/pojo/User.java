@@ -2,8 +2,6 @@ package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,10 +11,8 @@ import java.io.Serializable;
  * </p>
  *
  * @author Zhen77
- * @since 2021-04-15
+ * @since 2021-04-24
  */
-@Data
-@NoArgsConstructor
 public class User implements Serializable {
 
     private static final long serialVersionUID=1L;
@@ -32,15 +28,13 @@ public class User implements Serializable {
      */
     private String username;
 
-
-
     /**
      * 手机号
      */
     private String phone;
 
     /**
-     * 真是姓名
+     * 真实姓名 
      */
     private String realname;
 
@@ -54,13 +48,6 @@ public class User implements Serializable {
      */
     private String address;
 
-    public User(String username, String phone, String realname, String identity, String address) {
-        this.username = username;
-        this.phone = phone;
-        this.realname = realname;
-        this.identity = identity;
-        this.address = address;
-    }
 
     public Integer getUserid() {
         return userid;
@@ -77,7 +64,6 @@ public class User implements Serializable {
     public void setUsername(String username) {
         this.username = username;
     }
-
 
     public String getPhone() {
         return phone;
