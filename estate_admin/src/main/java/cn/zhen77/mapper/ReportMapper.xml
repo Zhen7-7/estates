@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhen77.mapper.ReportMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Report">
+        <id column="reportid" property="reportid" />
+        <result column="userid" property="userid" />
+        <result column="reporttype" property="reporttype" />
+        <result column="reportcontent" property="reportcontent" />
+        <result column="reportimg1" property="reportimg1" />
+        <result column="reportimg2" property="reportimg2" />
+        <result column="reportimg3" property="reportimg3" />
+        <result column="reportimg4" property="reportimg4" />
+        <result column="reportimg5" property="reportimg5" />
+        <result column="reportimg6" property="reportimg6" />
+        <result column="reportimg7" property="reportimg7" />
+        <result column="reportimg8" property="reportimg8" />
+        <result column="reportimg9" property="reportimg9" />
+        <result column="issolve" property="issolve" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        reportid, userid, reporttype, reportcontent, reportimg1, reportimg2, reportimg3, reportimg4, reportimg5, reportimg6, reportimg7, reportimg8, reportimg9, issolve
+    </sql>
+
+</mapper>

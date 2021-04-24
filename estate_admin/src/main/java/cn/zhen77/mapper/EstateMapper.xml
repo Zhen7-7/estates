@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhen77.mapper.EstateMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Estate">
+        <id column="estateid" property="estateid" />
+        <result column="estatename" property="estatename" />
+        <result column="estateimg" property="estateimg" />
+        <result column="estateaddress" property="estateaddress" />
+        <result column="estateallnum" property="estateallnum" />
+        <result column="estatelastnum" property="estatelastnum" />
+        <result column="Company" property="Company" />
+        <result column="Buildingnum" property="Buildingnum" />
+        <result column="Price" property="Price" />
+        <result column="city" property="city" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        estateid, estatename, estateimg, estateaddress, estateallnum, estatelastnum, Company, Buildingnum, Price, city
+    </sql>
+
+</mapper>

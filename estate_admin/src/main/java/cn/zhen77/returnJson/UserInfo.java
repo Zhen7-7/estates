@@ -1,5 +1,7 @@
 package cn.zhen77.returnJson;
 
+import java.security.Permissions;
+
 public class UserInfo {
 
     private String name;
