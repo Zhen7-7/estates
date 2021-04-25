@@ -2,7 +2,11 @@ package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
 public class Housingimg {
     @TableId(value = "id",type = IdType.AUTO)
     private Integer housingimgid;
@@ -26,8 +30,7 @@ public class Housingimg {
         this.housingimg5 = housingimg5;
     }
 
-    public Housingimg() {
-    }
+
 
     public Integer getHousingimgid() {
         return housingimgid;

@@ -1,20 +1,16 @@
 package cn.zhen77.mapper;
 
-import cn.zhen77.pojo.Housing;
 import cn.zhen77.pojo.Housingimg;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface HousingimgMapper {
-    int deleteByPrimaryKey(Integer housingimgid);
-
-    int insert(Housingimg record);
-
-    int insertSelective(Housingimg record);
-
-    Housingimg selectByPrimaryKey(Integer housingimgid);
-
-    int updateByPrimaryKeySelective(Housingimg record);
-
-    int updateByPrimaryKey(Housingimg record);
-
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author Zhen77
+ * @since 2021-04-25
+ */
+public interface HousingimgMapper extends BaseMapper<Housingimg> {
 
 }

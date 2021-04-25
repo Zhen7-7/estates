@@ -1,108 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="cn.zhen77.mapper.HousingimgMapper" >
-  <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Housingimg" >
-    <id column="housingimgid" property="housingimgid" jdbcType="INTEGER" />
-    <result column="housingimg1" property="housingimg1" jdbcType="VARCHAR" />
-    <result column="housingimg2" property="housingimg2" jdbcType="VARCHAR" />
-    <result column="housingimg3" property="housingimg3" jdbcType="VARCHAR" />
-    <result column="housingimg4" property="housingimg4" jdbcType="VARCHAR" />
-    <result column="housingimg5" property="housingimg5" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    housingimgid, housingimg1, housingimg2, housingimg3, housingimg4, housingimg5
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from housingimg
-    where housingimgid = #{housingimgid,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from housingimg
-    where housingimgid = #{housingimgid,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="cn.zhen77.pojo.Housingimg" >
-    insert into housingimg (housingimgid, housingimg1, housingimg2, 
-      housingimg3, housingimg4, housingimg5
-      )
-    values (#{housingimgid,jdbcType=INTEGER}, #{housingimg1,jdbcType=VARCHAR}, #{housingimg2,jdbcType=VARCHAR}, 
-      #{housingimg3,jdbcType=VARCHAR}, #{housingimg4,jdbcType=VARCHAR}, #{housingimg5,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="cn.zhen77.pojo.Housingimg" >
-    insert into housingimg
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="housingimgid != null" >
-        housingimgid,
-      </if>
-      <if test="housingimg1 != null" >
-        housingimg1,
-      </if>
-      <if test="housingimg2 != null" >
-        housingimg2,
-      </if>
-      <if test="housingimg3 != null" >
-        housingimg3,
-      </if>
-      <if test="housingimg4 != null" >
-        housingimg4,
-      </if>
-      <if test="housingimg5 != null" >
-        housingimg5,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="housingimgid != null" >
-        #{housingimgid,jdbcType=INTEGER},
-      </if>
-      <if test="housingimg1 != null" >
-        #{housingimg1,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg2 != null" >
-        #{housingimg2,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg3 != null" >
-        #{housingimg3,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg4 != null" >
-        #{housingimg4,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg5 != null" >
-        #{housingimg5,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.zhen77.pojo.Housingimg" >
-    update housingimg
-    <set >
-      <if test="housingimg1 != null" >
-        housingimg1 = #{housingimg1,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg2 != null" >
-        housingimg2 = #{housingimg2,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg3 != null" >
-        housingimg3 = #{housingimg3,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg4 != null" >
-        housingimg4 = #{housingimg4,jdbcType=VARCHAR},
-      </if>
-      <if test="housingimg5 != null" >
-        housingimg5 = #{housingimg5,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where housingimgid = #{housingimgid,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.zhen77.pojo.Housingimg" >
-    update housingimg
-    set housingimg1 = #{housingimg1,jdbcType=VARCHAR},
-      housingimg2 = #{housingimg2,jdbcType=VARCHAR},
-      housingimg3 = #{housingimg3,jdbcType=VARCHAR},
-      housingimg4 = #{housingimg4,jdbcType=VARCHAR},
-      housingimg5 = #{housingimg5,jdbcType=VARCHAR}
-    where housingimgid = #{housingimgid,jdbcType=INTEGER}
-  </update>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhen77.mapper.HousingimgMapper">
 
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Housingimg">
+        <id column="housingimgid" property="housingimgid" />
+        <result column="housingimg1" property="housingimg1" />
+        <result column="housingimg2" property="housingimg2" />
+        <result column="housingimg3" property="housingimg3" />
+        <result column="housingimg4" property="housingimg4" />
+        <result column="housingimg5" property="housingimg5" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        housingimgid, housingimg1, housingimg2, housingimg3, housingimg4, housingimg5
+    </sql>
 
 </mapper>

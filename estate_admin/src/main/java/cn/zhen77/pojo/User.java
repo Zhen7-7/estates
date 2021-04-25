@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.Serializable;
 
@@ -14,11 +15,11 @@ import java.io.Serializable;
  * </p>
  *
  * @author Zhen77
- * @since 2021-04-24
+ * @since 2021-04-25
  */
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class User implements Serializable {
 
     private static final long serialVersionUID=1L;
@@ -52,7 +53,17 @@ public class User implements Serializable {
     /**
      * 地址
      */
-    private String address;
+    private String city;
+
+    /**
+     * 性别
+     */
+    private String gender;
+
+    /**
+     * 用户头像
+     */
+    private String headimg;
 
 
     public Integer getUserid() {
@@ -95,12 +106,28 @@ public class User implements Serializable {
         this.identity = identity;
     }
 
-    public String getAddress() {
-        return address;
+    public String getCity() {
+        return city;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getHeadimg() {
+        return headimg;
+    }
+
+    public void setHeadimg(String headimg) {
+        this.headimg = headimg;
     }
 
     @Override
@@ -111,7 +138,9 @@ public class User implements Serializable {
         ", phone=" + phone +
         ", realname=" + realname +
         ", identity=" + identity +
-        ", address=" + address +
+        ", city=" + city +
+        ", gender=" + gender +
+        ", headimg=" + headimg +
         "}";
     }
 }

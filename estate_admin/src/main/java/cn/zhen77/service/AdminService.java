@@ -22,4 +22,5 @@ public class AdminService {
         queryWrapper.eq("adminname",name);
         return adminMapper.selectOne(queryWrapper);
     }
+
 }

@@ -24,9 +24,9 @@ public class UserController {
     private UserService userService;
     @RequestMapping("/register")
 
-    public User register(String username,String phone,String realname,String identity,String address){
+    public User register(String username,String phone,String realname,String identity,String address,String gender,String headimg){
 //        User user = new User("孙朕","123456","132454644","suznhen","46546545465","china");
-        User demo = new User(username,phone,realname,identity,address);
+        User demo = new User(username,phone,realname,identity,address,gender,headimg);
         Integer result = userService.insertUser(demo);
         if(result==1) {
             User user = userService.selectUser(username);
@@ -35,24 +35,7 @@ public class UserController {
             return null;
         }
     }
-    /*@RequestMapping("/loginuser")
 
-    public boolean login(String username, String password){
-        System.out.println(username);
-        System.out.println(password);
-        User user = userService.selectUser(username);
-        boolean result = false;
-        System.out.println(user.getPassword());
-        try {
-            result = password.equals(user.getPassword());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            System.out.println(result);
-            return result;
-
-        }
-    }*/
     @RequestMapping("/getUser")
     public User getUser(String username){
         User user = userService.selectUser(username);

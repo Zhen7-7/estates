@@ -3,6 +3,7 @@ package cn.zhen77.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -14,6 +15,7 @@ import java.io.Serializable;
  * @author Zhen77
  * @since 2021-04-15
  */
+@Data
 public class Estate implements Serializable {
 
     private static final long serialVersionUID=1L;

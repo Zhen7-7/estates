@@ -19,11 +19,17 @@ import java.util.List;
 public class UserService  {
     @Autowired
     private UserMapper userMapper;
+
+    //根据用户名返回用户信息
     public User selectUser(String name) {
-        User user= userMapper.selectUserByUsername(name);
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("username",name);
+        User user = userMapper.selectOne(queryWrapper);
         return user;
     }
 
+
+    //插入User
     public Integer insertUser(User user){
         //定义查询包装类
         QueryWrapper queryWrapper = new QueryWrapper();

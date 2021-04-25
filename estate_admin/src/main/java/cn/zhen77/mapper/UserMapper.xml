@@ -9,15 +9,14 @@
         <result column="phone" property="phone" />
         <result column="realname" property="realname" />
         <result column="identity" property="identity" />
-        <result column="address" property="address" />
+        <result column="city" property="city" />
+        <result column="gender" property="gender" />
+        <result column="headimg" property="headimg" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        userid, username, phone, realname, identity, address
+        userid, username, phone, realname, identity, city, gender, headimg
     </sql>
 
-    <select id="selectAllUserinfo" resultType="cn.zhen77.pojo.User">
-        select * from user;
-    </select>
 </mapper>
