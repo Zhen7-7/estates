@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhen77.mapper.HousingimgMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.zhen77.pojo.Housingimg">
+        <id column="housingimgid" property="housingimgid" />
+        <result column="housingimg1" property="housingimg1" />
+        <result column="housingimg2" property="housingimg2" />
+        <result column="housingimg3" property="housingimg3" />
+        <result column="housingimg4" property="housingimg4" />
+        <result column="housingimg5" property="housingimg5" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        housingimgid, housingimg1, housingimg2, housingimg3, housingimg4, housingimg5
+    </sql>
+
+</mapper>

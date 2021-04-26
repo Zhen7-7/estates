@@ -2,6 +2,7 @@ package cn.zhen77.service;
 
 import cn.zhen77.mapper.SuggestMapper;
 import cn.zhen77.pojo.Suggest;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,22 @@ import java.util.List;
 public class SuggestService {
     @Autowired
     private SuggestMapper suggestMapper;
+
+    //查看所有意见反馈
     public List<Suggest> getAllSuggest(){
         List<Suggest> suggests = suggestMapper.selectList(null);
         return suggests;
     }
+    //修改部分意见反馈
+    public Boolean updateSuggest(Integer suggestid){
+        Suggest suggest = suggestMapper.selectById(suggestid);
+        suggest.setIssolve(true);
+        int i = suggestMapper.updateById(suggest);
+        if (i==1){
+            return true;
+        }else {
+            return false;
+        }
+    }
+
 }

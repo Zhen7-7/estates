@@ -3,6 +3,9 @@ package cn.zhen77.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -14,6 +17,9 @@ import java.io.Serializable;
  * @author Zhen77
  * @since 2021-04-24
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Estate implements Serializable {
 
     private static final long serialVersionUID=1L;
@@ -72,6 +78,17 @@ public class Estate implements Serializable {
      */
     private String city;
 
+    public Estate(String estatename, String estateimg, String estateaddress, Integer estateallnum, Integer estatelastnum, String company, Integer buildingnum, Double price, String city) {
+        this.estatename = estatename;
+        this.estateimg = estateimg;
+        this.estateaddress = estateaddress;
+        this.estateallnum = estateallnum;
+        this.estatelastnum = estatelastnum;
+        Company = company;
+        Buildingnum = buildingnum;
+        Price = price;
+        this.city = city;
+    }
 
     public Integer getEstateid() {
         return estateid;

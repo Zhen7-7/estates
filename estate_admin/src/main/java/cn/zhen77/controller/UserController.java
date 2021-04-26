@@ -27,10 +27,25 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
-    @RequestMapping("/getAllUserinfo")
+    @RequestMapping("/getAllUserInfo")
     public String getAllUSerInfo(){
-        List<User> list = userService.getAllUserinfo();
+        List<User> list = userService.getAllUserInfo();
         ReturnObject returnObject = new ReturnObject(list);
+        return JSONObject.toJSONString(returnObject);
+    }
+
+    @RequestMapping("/updateUserInfo")
+    public String updateUserInfo(Integer userid,String username,String phone,String realname,String identity,String address,String gender,String headimg){
+//        User user = new User("孙朕","123456","132454644","suznhen","46546545465","china");
+        User user = new User(userid,username,phone,realname,identity,address,gender,headimg);
+        boolean  result = userService.updateUserInfo(user);
+        ReturnObject returnObject = new ReturnObject(result);
+        return JSONObject.toJSONString(returnObject);
+    }
+    @RequestMapping("/deleteUserInfo")
+    public String del(Integer userid){
+        boolean result = userService.delUserINfo(userid);
+        ReturnObject returnObject = new ReturnObject(result);
         return JSONObject.toJSONString(returnObject);
     }
 }

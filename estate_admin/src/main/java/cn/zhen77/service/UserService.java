@@ -21,9 +21,24 @@ public class UserService  {
     private UserMapper userMapper;
 
     //获取全部userinfo
-    public List<User> getAllUserinfo() {
+    public List<User> getAllUserInfo() {
         List<User> users = userMapper.selectList(null);
         return users;
     }
+    //删除该用户
+    public boolean delUserINfo(Integer userid){
+        User user = userMapper.selectById(userid);
+        int i = userMapper.deleteById(userid);
+        if (i==1) return true;
+        else return false;
+
+    }
+    //更新用户信息
+    public boolean updateUserInfo(User user){
+        int i = userMapper.updateById(user);
+        if (i==1) return true;
+        else return false;
+    }
+
 
 }
