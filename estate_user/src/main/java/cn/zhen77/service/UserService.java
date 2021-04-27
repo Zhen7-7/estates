@@ -27,6 +27,11 @@ public class UserService  {
         User user = userMapper.selectOne(queryWrapper);
         return user;
     }
+    //根据用户id返回用户信息
+    public User selectUserByid(Integer id) {
+        User user = userMapper.selectById(id);
+        return user;
+    }
 
 
     //插入User
