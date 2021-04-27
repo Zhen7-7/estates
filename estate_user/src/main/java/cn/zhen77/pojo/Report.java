@@ -90,7 +90,7 @@ public class Report implements Serializable {
     /**
      * 是否被解决
      */
-    private Boolean issolve;
+    private  boolean issolve=false;
 
 
     public Integer getReportid() {
@@ -197,11 +197,15 @@ public class Report implements Serializable {
         this.reportimg9 = reportimg9;
     }
 
-    public Boolean getIssolve() {
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public boolean isIssolve() {
         return issolve;
     }
 
-    public void setIssolve(Boolean issolve) {
+    public void setIssolve(boolean issolve) {
         this.issolve = issolve;
     }
 
@@ -238,5 +242,6 @@ public class Report implements Serializable {
         this.reportimg7 = reportimg7;
         this.reportimg8 = reportimg8;
         this.reportimg9 = reportimg9;
+
     }
 }
