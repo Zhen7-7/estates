@@ -1,0 +1,51 @@
+<view class="floor_info">
+    <view class="title"> {{housing.housingtype}}</view>
+    <view class="common top">房价：约{{housing.housingprice}}w/m²</view>
+    <view class="common">门牌号：{{housing.housingunit}}单元{{housing.housingroom}}</view>
+    <view class="common">房屋面积：{{housing.housingarea}}</view>
+    <view class="common">可用面积：{{housing.housingrealarea}}</view>
+    <view class="common ">是否装修：{{housing.housingfinish?'是':'否'}}</view>
+    <view class="common bottom">总价格：{{housing.housingprice*housing.housingarea*10000}}元</view>
+</view>
+    <view class="goods_info">
+            <view class="goods_info_title">图文详情</view>
+            <view class="goods_info_content">
+                <image class="" src="{{housing.housingimg.housingimg1}}" mode="widthFix"  ></image>
+            </view>
+            <view class="goods_info_content">
+                <image class="" src="{{housing.housingimg.housingimg2}}" mode="widthFix"  ></image>
+            </view>
+            <view class="goods_info_content">
+                <image class="" src="{{housing.housingimg.housingimg3}}" mode="widthFix"  ></image>
+            </view>
+            <view class="goods_info_content">
+                <image class="" src="{{housing.housingimg.housingimg4}}" mode="widthFix"  ></image>
+            </view>
+            <view class="goods_info_content">
+                <image class="" src="{{housing.housingimg.housingimg5}}" mode="widthFix"  ></image>
+            </view>
+    </view>
+<view class="btm_tool">
+    <view class="tool_item">
+        <view class="iconfont icon-gouwucheman"></view>
+        <view>举报</view>
+        <button open-type="contact"> </button>
+    </view>
+    <view class="tool_item">
+        <view class="iconfont icon-gouwucheman"></view>
+        <view>分享</view>
+        <button open-type="share"> </button>
+    </view>
+    <navigator open-type="switchTab" url="/pages/like/index" class="tool_item">
+        <view class="iconfont icon-gouwucheman"></view>
+        <view>心愿单</view>
+    </navigator>
+    <view class="tool_item btn_cart" bindtap="handleCartAdd">
+        加入心愿单
+    </view>
+   <navigator url="/pages/pay/index"class="tool_item btn_buy">
+    <view >
+        找我面谈
+     </view>
+   </navigator>
+  </view>

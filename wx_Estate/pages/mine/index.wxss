@@ -1,0 +1,49 @@
+page {
+  background-color: #edece8;
+}
+.bind{
+  height:100rpx;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#dbdbdb;
+  border-radius: 15rpx;
+}
+.identitymesssage,
+.realmessage,
+.address,
+.others{
+  font-size: 45rpx;
+  font-weight: 500;
+  margin:25rpx;
+  border-bottom:1px solid black;
+}
+.identity_wrap,
+.real_wrap,
+.address_wrap,
+.others_wrap{
+  margin:25rpx;
+}
+.identity_wrap .identity_name,
+.identity_wrap .num,
+.real_wrap .real_name,
+.real_wrap .identity,
+.real_wrap .birth,
+.others_wrap .rob{
+  background-color: #fff;
+  height:80rpx;
+  line-height: 80rpx;
+  padding-left: 15rpx;
+}
+.identity_wrap .identity_name,
+.real_wrap .identity,
+.real_wrap .real_name{
+  margin-bottom: 15rpx;
+}
+.address_wrap .address_detail{
+  background-color: #fff;
+  height:80rpx;
+  line-height: 80rpx;
+  padding-left: 15rpx;
+}

@@ -1,0 +1,113 @@
+page {
+  background-color: #edece8;
+}
+.user_info_wrap {
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.user_info_wrap .user_img_wrap {
+  position: relative;
+}
+.user_info_wrap .user_img_wrap .user_bg {
+  height: 50vh;
+  filter: blur(15rpx);
+}
+.user_info_wrap .user_img_wrap .user_info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.user_info_wrap .user_img_wrap .user_info .user_icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user_info_wrap .user_img_wrap .user_info .user_name {
+  color: blue;
+  margin-top: 40rpx;
+  font-size: 30rpx;
+}
+.user_info_wrap .user_btn {
+  width: 30%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  color: greenyellow;
+  border-radius: 10rpx;
+}
+.user_content {
+  position: relative;
+}
+.user_content .user_main {
+  padding-bottom: 100rpx;
+  color: #666;
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+}
+.user_content .user_main .history_wrap {
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  margin-bottom: 15rpx;
+}
+.user_content .user_main .history_wrap navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user_content .user_main .history_wrap navigator .his_num {
+  color: var(--themeColor);
+}
+.user_content .user_main .orders_wrap {
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.user_content .user_main .orders_wrap .orders_title {
+  border-bottom: 1px solid #edece8;
+  padding: 15rpx;
+}
+.user_content .user_main .orders_wrap .order_content {
+  padding: 10rpx;
+  display: flex;
+}
+.user_content .user_main .orders_wrap .order_content navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user_content .user_main .orders_wrap .order_content navigator .order_icon {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+.user_content .user_main .app_info_wrap {
+  margin-top: 20rpx;
+}
+.user_content .user_main .app_info_wrap .app_info_item {
+  background-color: #fff;
+  width: 100%;
+  padding: 15rpx;
+  margin-bottom: 5rpx;
+}
+.user_content .user_main .app_info_wrap .app_info_contact {
+  display: flex;
+  justify-content: space-between;
+}
+.user_content .user_main .recommend_wrap {
+  background-color: #fff;
+  width: 100%;
+  padding: 15rpx;
+  margin-top: 20rpx;
+}

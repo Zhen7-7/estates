@@ -1,0 +1,68 @@
+<view class="user_info_wrap">
+    <view wx:if="{{userinfo.avatarUrl}}" class="user_img_wrap">
+        <image class="user_bg" src="{{userinfo.avatarUrl}}"></image>
+        <view class="user_info">
+            <navigator url="/pages/mine/index"><image class="user_icon" src="{{userinfo.avatarUrl}}"></image></navigator>
+            <view class="user_name">{{userinfo.nickName}}</view>
+        </view>
+    </view>
+    <view wx:else class="user_btn">
+        <button open-type="getUserProfile" bindtap="handleGetUserInfo">登录</button>
+    </view>
+</view>
+<view class="user_content">
+    <view class="user_main">
+
+        <!-- <view class="history_wrap">
+            <navigator open-type="switchTab" url="/pages/trends/index">
+                <view class="his_num">0</view>
+                <view class="his_name">动态</view>
+            </navigator>
+            <navigator url="/pages/like/index">
+                <view class="his_num">{{collectNums}}</view>
+                <view class="his_name">我的心愿</view>
+            </navigator>
+            <navigator url="/pages/collect/index">
+                <view class="his_num">0</view>
+                <view class="his_name">我的收藏</view>
+            </navigator>
+           
+        </view> -->
+
+        <view class="orders_wrap">
+            <view class="orders_title">其他应用</view>
+            <view class="order_content">
+                <navigator url="/pages/mine/index">
+                    <view class="iconfont icon-jubao1 order_icon"></view>
+                    <view class="">信息完善</view>
+                </navigator>
+                <navigator url="/pages/signin/index">
+                    <view class="iconfont icon-qiandao order_icon"></view>
+                    <view class="">签到</view>
+                </navigator>
+                <navigator  open-type="switchTab" url="/pages/like/index" >
+                    <view class="iconfont icon-pinglun1 order_icon"></view>
+                    <view class="">心愿</view>
+                </navigator>
+                <navigator url="/pages/report/index">
+                    <view class="iconfont icon-jubao1 order_icon"></view>
+                    <view class="">举报</view>
+                </navigator>
+                
+            </view>
+        </view>
+
+        <view class="app_info_wrap">
+            <view class="app_info_item app_info_contact">
+                <text>联系客服</text>
+                <text>400-618-4000</text>
+            </view>
+            <navigator url="/pages/feedback/index" >
+                <view class="app_info_item" >意见反馈</view>
+            </navigator>
+            <view class="app_info_item">关于我们</view>
+        </view>
+
+        <view class="recommend_wrap">把应用推荐给其他人</view>
+    </view>
+</view>

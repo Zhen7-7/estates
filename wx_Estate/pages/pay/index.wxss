@@ -1,0 +1,36 @@
+page{
+  background-color: #edece8;
+}
+.box{
+  height:800rpx;
+  width:85%;
+  margin:auto;
+  background-color: #fff;
+  border-radius: 15rpx;
+  margin-top:170rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.name_wrap{
+  width:83%;
+  display: flex;
+  justify-content: start;
+}
+.name_wrap .userimg{
+  height:110rpx;
+  width:110rpx;
+  border-radius: 15rpx;
+}
+.name_wrap .name{
+  margin:20rpx;
+  font-size: 45rpx;
+}
+.img{
+  width:450rpx;
+  height:450rpx;
+}
+.add{
+
+}

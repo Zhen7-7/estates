@@ -1,0 +1,93 @@
+page {
+  padding-bottom: 90rpx;
+}
+.revice_address_row .address_btn {
+  padding: 20rpx;
+}
+.revice_address_row .address_btn button {
+  width: 60%;
+}
+.revice_address_row .user_info_row {
+  padding: 20rpx;
+  display: flex;
+}
+.revice_address_row .user_info_row .user_info {
+  flex: 5;
+}
+.revice_address_row .user_info_row .user_phone {
+  flex: 3;
+  text-align: right;
+}
+.cart_content .cart_title {
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: black;
+  border-top: 1px solid var(--themeColor);
+  border-bottom: 1px solid var(--themeColor);
+}
+.cart_content .cart_main .cart_item {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding: 15rpx;
+}
+
+.cart_content .cart_main .cart_item .cart_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_main .cart_item .cart_img_wrap image {
+  width: 80%;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position:relative;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_name {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #666;
+  font-size:40rpx;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .delete{
+  height:50rpx;
+  width:50rpx;
+  position: absolute;
+  right:0;
+  top:0;
+  border-radius: 50%;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .goods_price {
+  color: var(--themeColor);
+  font-size: 34rpx;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .cart_num_tool {
+  display: flex;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .cart_num_tool .num_edit {
+  width: 55rpx;
+  height: 55rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rpx solid #000;
+}
+.cart_content .cart_main .cart_item .cart_info_wrap .goods_price_wrap .cart_num_tool .goods_num {
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:15rpx;
+  background-color: rgb(230, 139, 214);
+}
+

@@ -1,0 +1,19 @@
+<view wx:if="{{!success}}">
+  <form action="http://localhost:8080/loginuser" method="post" name="mylogin" catchsubmit="formSubmit">
+ <view class='info_wrap'>
+        <view class='info'>
+               <input type='text' maxlength="15" class= 'info_username' bindinput="handleInputusername" placeholder="请输入你的账号" name="username"/>
+         </view>
+ </view>
+ <view class='info_wrap'>
+        <view class='info'>
+               <input type='password' maxlength="15" class= 'info_password' bindinput="handleInputpassword" placeholder="请输入你的密码" name="password"/>
+         </view>
+ </view>
+ <button class='submit' formType="submit" >登录</button>
+  </form>
+ </view>
+ <view class = 'success' wx:if="{{success}}">
+ <view class='cheer'><icon type="success" size="24"/> 恭喜您登陆成功!</view>
+ <button type = "default" class = 'return' bindtap='return_home'>返回首页</button>
+ </view>

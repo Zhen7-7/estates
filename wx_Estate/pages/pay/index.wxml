@@ -1,0 +1,10 @@
+<view class="box">
+  <view class='name_wrap'>
+    <image class="userimg" src="http://a1.qpic.cn/psc?/V10a1Gl13MxYYU/ibw3PBAeGGFcX*BnzIQux*IAKCUzIbfxzrvw4rA.w.MruYVm3xVkZ5DrqwsFOAL5z8X9hvjk1706OF4nDyDjgA!!/c&ek=1&kp=1&pt=0&bo=OAQ4BDgEOAQRADc!&tl=1&tm=1618833600&sce=0-12-12&rf=0-18"></image>
+    <view class="name">找我了解详情</view>
+    
+  </view>
+  <view class="name">联系电话电话：15545661234</view>
+  <image class="img" src="http://a1.qpic.cn/psc?/V10a1Gl13MxYYU/ibw3PBAeGGFcX*BnzIQux*9ui2SCAJcEw8ITWyZWA.OwIH*MbWFXNoPfnvJV7gywolQFbEjBBeLICBf9J2u9fw!!/c&ek=1&kp=1&pt=0&bo=SQJJAkkCSQIRADc!&tl=1&tm=1618833600&sce=0-12-12&rf=0-18"></image>
+  <view class='add'>请扫描此二维码添加工作人员微信联系</view>
+</view>

@@ -1,0 +1,71 @@
+<!-- <view class="index_swiper">
+  <swiper indicator-dots autoplay circular interval="3000">
+      <swiper-item >
+              <image mode="widthFix" src="https://img0.baidu.com/it/u=3920715280,3388974999&fm=26&fmt=auto&gp=0.jpg"></image>   
+      </swiper-item>
+      <swiper-item >
+              <image mode="widthFix" src="https://img1.baidu.com/it/u=1699400192,2183951081&fm=26&fmt=auto&gp=0.jpg"></image>   
+      </swiper-item>
+      <swiper-item >
+              <image mode="widthFix" src="https://img1.baidu.com/it/u=1131791035,1692146553&fm=26&fmt=auto&gp=0.jpg"></image>   
+      </swiper-item>
+      <swiper-item >
+              <image mode="widthFix" src="https://img1.baidu.com/it/u=3537022156,3523927063&fm=26&fmt=auto&gp=0.jpg"></image>   
+      </swiper-item>
+      <swiper-item >
+              <image mode="widthFix" src="https://img0.baidu.com/it/u=3149315149,520947929&fm=26&fmt=auto&gp=0.jpg"></image>   
+      </swiper-item>
+  </swiper>
+</view> -->
+<view class="title_wrap">
+    <view class="title">{{estate.estatename}}</view>
+    <view class="lable_wrap">
+      <view class="lable">在售</view>
+      <view class="lable">在售</view>
+      <view class="lable">在售</view>
+      <view class="lable">在售</view>
+      <view class="lable">在售</view>
+    </view>
+    <view class="detail_wrap">
+      平均价：<view class="price">{{estate.price*10000}}</view><view class="price1" >元/m²</view>
+    </view>
+    <view class="detail_wrap">
+    城市： <view class="num">{{estate.city}}</view>
+    </view>
+    <view class="detail_wrap">
+      平均面积：   <view class="num">{{estate.estateallnum}}m²</view>
+    </view> 
+    <view class="address_wrap">
+      <view class="address_icon">
+        <image class=" icon" src="../../icons/address.png"></image>
+        <view class="address">{{estate.estateaddress}}</view>
+      </view>
+      <view class="right" > > </view>
+    </view>
+    <view class="information">
+      详细楼层
+    </view>
+</view>
+
+<navigator 
+    wx:for="{{building}}" 
+    wx:key="buildingid"
+    url="/pages/detail_floor/index?buildingid={{item.buildingid}}">
+    <view class="content">
+    <view class="picture">
+      <image  src="{{item.buildingimg}}"></image>   
+    </view>
+    <view class="content_text">
+      <view class="text1">
+        {{item.buildingid}}号楼
+      </view>
+      <view class="text2">
+        <view class="label">有无电梯：{{item.haselevator}}</view>
+        <view class="price"> {{item.buildingfloornum}}层</view> 
+      </view>
+      <view class="text3">
+       共{{item.housingunitnum}}*{{item.buildingfloornum}}户
+      </view>
+    </view>
+  </view>
+  </navigator>
