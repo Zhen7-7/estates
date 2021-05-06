@@ -1,6 +1,7 @@
 package cn.zhen77.controller;
 
 
+import cn.zhen77.pojo.Suggest;
 import cn.zhen77.returnJson.ReturnObject;
 import cn.zhen77.service.SuggestService;
 import com.alibaba.fastjson.JSONObject;
@@ -10,6 +11,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * <p>
@@ -31,6 +34,20 @@ public class SuggestController {
         Boolean result = suggestService.updateSuggest(suggestid);
         ReturnObject returnObject = new ReturnObject(result);
         return JSONObject.toJSONString(returnObject);
+    }
+    @RequestMapping("/deleteSuggest")
+    public String deleteSuggest(Integer suggestid){
+        boolean b = suggestService.deleSuggest(suggestid);
+        ReturnObject returnObject = new ReturnObject(b);
+        return JSONObject.toJSONString(returnObject);
+
+    }
+    @RequestMapping("/getAllSuggest")
+    public String getAllSuggest(){
+        List<Suggest> list = suggestService.getAllSuggest();
+        ReturnObject returnObject = new ReturnObject(list);
+        return JSONObject.toJSONString(returnObject);
+
     }
 }
 

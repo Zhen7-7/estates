@@ -48,5 +48,12 @@ public class UserController {
         ReturnObject returnObject = new ReturnObject(result);
         return JSONObject.toJSONString(returnObject);
     }
+    @RequestMapping("/getUserByUserid")
+    public String getUserByUserid(Integer userid){
+        User user = userService.selectUserByUserid(userid);
+        ReturnObject returnObject = new ReturnObject(user);
+        return JSONObject.toJSONString(returnObject);
+
+    }
 }
 

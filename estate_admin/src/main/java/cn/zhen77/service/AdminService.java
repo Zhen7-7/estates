@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author : zhen77
  * @date: 2021/4/20 - 04 - 20 - 21:44
@@ -21,6 +23,10 @@ public class AdminService {
         QueryWrapper<Admin> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("adminname",name);
         return adminMapper.selectOne(queryWrapper);
+    }
+    public List<Admin> getAllAdmin(){
+        List<Admin> admins = adminMapper.selectList(null);
+        return admins;
     }
 
 }

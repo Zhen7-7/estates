@@ -35,5 +35,22 @@ public class SuggestService {
             return false;
         }
     }
+    //查看未采纳的
+    public List<Suggest> notresolve(boolean issolve){
+        QueryWrapper<Suggest> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("issolve",issolve);
+        List<Suggest> suggests = suggestMapper.selectList(queryWrapper);
+        return suggests;
+    }
+    //删除
+    public boolean deleSuggest(Integer suggestid){
+        int i = suggestMapper.deleteById(suggestid);
+        if (i==1){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 
 }

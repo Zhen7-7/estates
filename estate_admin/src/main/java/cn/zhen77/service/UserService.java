@@ -39,6 +39,10 @@ public class UserService  {
         if (i==1) return true;
         else return false;
     }
+    public User selectUserByUserid(Integer userid){
+        User user = userMapper.selectById(userid);
+        return user;
+    }
 
 
 }

@@ -82,6 +82,13 @@ public class AdminController {
 //        return JSONObject.toJSONString(new ReturnObject(null));
         return "";
     }
+    //getAllAdmin
+    @RequestMapping("/getAllAdminInfo")
+    public String getAllAdminInfo(){
+        List<Admin> allAdmin = adminService.getAllAdmin();
+        ReturnObject returnObject = new ReturnObject(allAdmin);
+        return JSONObject.toJSONString(returnObject);
+    }
 
 }
 
