@@ -25,7 +25,11 @@ public class SuggestController {
 
     @Autowired
     SuggestService suggestService;
-
+    @RequestMapping("/getSuggest")
+    public Suggest getSuggest(Integer userid){
+        Suggest suggest = suggestService.getSuggest(userid);
+        return suggest;
+    }
     @RequestMapping("/insertSuggest")
     public Suggest insertSuggest (String suggesttype, String suggestcontent, Integer userid, @RequestParam List<String> list) {
         System.out.println(suggestcontent);
