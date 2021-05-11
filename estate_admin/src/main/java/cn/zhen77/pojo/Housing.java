@@ -66,8 +66,18 @@ public class Housing implements Serializable {
     /**
      * 是否装修
      */
-    private Boolean housingfinish;
+    private Boolean housingfinish= true;
 
+    public Housing(Integer buildingid, Integer housingimgid, String housingtype, Integer housingarea, Integer housingrealarea, Double housingprice, Integer housingunit, Integer housingroom) {
+        this.buildingid = buildingid;
+        this.housingimgid = housingimgid;
+        this.housingtype = housingtype;
+        this.housingarea = housingarea;
+        this.housingrealarea = housingrealarea;
+        this.housingprice = housingprice;
+        this.housingunit = housingunit;
+        this.housingroom = housingroom;
+    }
 
     public Integer getHousingid() {
         return housingid;

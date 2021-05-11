@@ -47,6 +47,12 @@ public class Building implements Serializable {
      */
     private Boolean haselevator;
 
+    public Building(Integer estateid, String buildingimg, Integer housingunitnum, Integer buildingfloornum) {
+        this.estateid = estateid;
+        this.buildingimg = buildingimg;
+        this.housingunitnum = housingunitnum;
+        this.buildingfloornum = buildingfloornum;
+    }
 
     public Integer getBuildingid() {
         return buildingid;

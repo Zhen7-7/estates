@@ -5,6 +5,7 @@ import cn.zhen77.pojo.Robhousing;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.util.List;
 
 /**
@@ -17,8 +18,17 @@ import java.util.List;
 public class RobhousingService {
     @Autowired
     private RobhousingMapper robhousingMapper;
-    public List<Robhousing>getAllRob(){
+    public List<Robhousing> getAllRob(){
         List<Robhousing> robhousings = robhousingMapper.selectList(null);
         return robhousings;
+    }
+    public boolean insertRob(Robhousing robhousing){
+        int insert = robhousingMapper.insert(robhousing);
+        if (insert==1){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

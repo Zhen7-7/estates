@@ -33,6 +33,13 @@ public class Housingimg implements Serializable {
 
     private String housingimg5;
 
+    public Housingimg(String housingimg1, String housingimg2, String housingimg3, String housingimg4, String housingimg5) {
+        this.housingimg1 = housingimg1;
+        this.housingimg2 = housingimg2;
+        this.housingimg3 = housingimg3;
+        this.housingimg4 = housingimg4;
+        this.housingimg5 = housingimg5;
+    }
 
     public Integer getHousingimgid() {
         return housingimgid;

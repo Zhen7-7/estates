@@ -33,6 +33,13 @@ public class RobhousingController {
         ReturnObject returnObject = new ReturnObject(allRob);
         return JSONObject.toJSONString(returnObject);
     }
+    @RequestMapping("insertRobhousing")
+    public String insertRobhousing(String robtype, String estatename, String estateaddress, Double estateprice, Double roballprice, Double robdiscount, Integer robarea, String robbuildingid, String robunitid, String robroomid, String robphone, String information, String reason, Integer lastnum, Integer lastday, String robimg) {
+        Robhousing robhousing = new Robhousing(robtype, estatename, estateaddress, estateprice, roballprice, robdiscount, robarea, robbuildingid, robunitid, robroomid,  robphone,  information, reason, lastnum, lastday, robimg);
+        boolean b = robhousingService.insertRob(robhousing);
+        ReturnObject returnObject = new ReturnObject(b);
+        return JSONObject.toJSONString(returnObject);
+    }
 
 }
 
