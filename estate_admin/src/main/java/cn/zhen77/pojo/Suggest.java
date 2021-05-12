@@ -2,6 +2,8 @@ package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,6 +15,9 @@ import java.io.Serializable;
  * @author Zhen77
  * @since 2021-04-24
  */
+@Data
+@NoArgsConstructor
+
 public class Suggest implements Serializable {
 
     private static final long serialVersionUID=1L;

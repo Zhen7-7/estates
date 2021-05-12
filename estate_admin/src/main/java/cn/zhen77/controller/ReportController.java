@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -44,10 +46,13 @@ public class ReportController {
     }
     @RequestMapping("/getAllReport")
     public String getAllReport(){
-        List<Report> list = reportService.getAllReport();
-        ReturnObject returnObject = new ReturnObject(list);
+        List<Report> notresolve = reportService.notresolve(false);
+        List<Report> yesresolve = reportService.notresolve(true);
+        Map<String,Object> map = new HashMap<>();
+        map.put("notresolve",notresolve);
+        map.put("yesresolve",yesresolve);
+        ReturnObject returnObject = new ReturnObject(map);
         return JSONObject.toJSONString(returnObject);
-
     }
 }
 

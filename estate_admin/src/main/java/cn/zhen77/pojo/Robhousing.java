@@ -2,6 +2,9 @@ package cn.zhen77.pojo;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -13,6 +16,9 @@ import java.io.Serializable;
  * @author Zhen77
  * @since 2021-04-24
  */
+@Data
+@NoArgsConstructor
+
 public class Robhousing implements Serializable {
 
     private static final long serialVersionUID=1L;
@@ -107,6 +113,27 @@ public class Robhousing implements Serializable {
      * 一张图片
      */
     private String robimg;
+
+    public Robhousing(Integer robid, String robtype, String estatename, String estateaddress, Integer estateid, Double estateprice, Double roballprice, Double robdiscount, Integer robarea, String robbuildingid, String robunitid, String robroomid, String robphone, String information, String reason, Integer lastnum, Integer lastday, String robimg) {
+        this.robid = robid;
+        this.robtype = robtype;
+        this.estatename = estatename;
+        this.estateaddress = estateaddress;
+        this.estateid = estateid;
+        this.estateprice = estateprice;
+        this.roballprice = roballprice;
+        this.robdiscount = robdiscount;
+        this.robarea = robarea;
+        this.robbuildingid = robbuildingid;
+        this.robunitid = robunitid;
+        this.robroomid = robroomid;
+        this.robphone = robphone;
+        this.information = information;
+        this.reason = reason;
+        this.lastnum = lastnum;
+        this.lastday = lastday;
+        this.robimg = robimg;
+    }
 
     public Robhousing(String robtype, String estatename, String estateaddress, Double estateprice, Double roballprice, Double robdiscount, Integer robarea, String robbuildingid, String robunitid, String robroomid, String robphone, String information, String reason, Integer lastnum, Integer lastday, String robimg) {
         this.robtype = robtype;

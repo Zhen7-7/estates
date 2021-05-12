@@ -35,13 +35,14 @@ public class ReportService {
             return false;
         }
     }
-    //查看未采纳的
+    //查看是否采纳的
     public List<Report> notresolve(boolean issolve){
         QueryWrapper<Report> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("issolve",issolve);
         List<Report> Reports = reportMapper.selectList(queryWrapper);
         return Reports;
     }
+
     //删除
     public boolean deleReport(Integer Reportid){
         int i = reportMapper.deleteById(Reportid);

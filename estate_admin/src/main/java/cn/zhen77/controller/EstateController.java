@@ -29,6 +29,7 @@ public class EstateController {
     @Autowired
     private EstateService estateService;
 
+
     //新增房产
     @RequestMapping("/addEstate")
     public String addEstate (String estatename, String estateimg, String estateaddress, Integer estateallnum, Integer estatelastnum, String company, Integer buildingnum, Double price, String city){
