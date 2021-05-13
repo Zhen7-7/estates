@@ -42,7 +42,6 @@ public class ReportController {
         boolean b = reportService.deleReport(reportid);
         ReturnObject returnObject = new ReturnObject(b);
         return JSONObject.toJSONString(returnObject);
-
     }
     @RequestMapping("/getAllReport")
     public String getAllReport(){

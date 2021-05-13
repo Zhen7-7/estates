@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -44,10 +46,14 @@ public class SuggestController {
     }
     @RequestMapping("/getAllSuggest")
     public String getAllSuggest(){
-        List<Suggest> list = suggestService.getAllSuggest();
-        ReturnObject returnObject = new ReturnObject(list);
+        List<Suggest> notresolve = suggestService.notresolve(false);
+        List<Suggest> yesresolve = suggestService.notresolve(true);
+        Map<String,Object> map = new HashMap<>();
+        map.put("notresolve",notresolve);
+        map.put("yesresolve",yesresolve);
+        ReturnObject returnObject = new ReturnObject(map);
         return JSONObject.toJSONString(returnObject);
-
     }
+
 }
 

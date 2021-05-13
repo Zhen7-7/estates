@@ -45,7 +45,7 @@ public class RoborderController {
 
     public static void init(int buildingid ,int unitid, int floor,int room  ){
         Random random = new Random();
-        buildingid = random.nextInt(10);
+        buildingid = random.nextInt(5);
         unitid = random.nextInt(5);
         floor= random.nextInt(23);
         room = floor*100 + random.nextInt(3);

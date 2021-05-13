@@ -31,4 +31,8 @@ public class RobhousingService {
             return false;
         }
     }
+    public Robhousing getRobByRobid(Integer robid){
+        Robhousing robhousing = robhousingMapper.selectById(robid);
+        return  robhousing;
+    }
 }
