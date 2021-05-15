@@ -30,7 +30,7 @@ public class RoborderController {
     private UserService userService;
     //插入roborder 前端传来robid
     @RequestMapping("/sendRob")
-    public boolean addRob(Integer robid,Integer userid){
+    public boolean addRob(Integer userid,Integer robid){
         User user = userService.selectUserByid(userid);
         String username = user.getUsername();
         String phone = user.getPhone();
