@@ -42,14 +42,20 @@ public class RoborderController {
 ////        return JSONObject.toJSONString(returnObject);
 ////    }
 
-    //获取前部的Roborder
+   /* 获取前部的Roborder
+    无须任何参数
+    返回一个List   List由Map组成
+    每个map里有如下绿的的  依次展示在前段即可
+
+    */
     @RequestMapping("/getAllRoborder")
     public String getAllRoborder(){
         List<Roborder> allRoborder = roborderService.getAllRoborder();
+        int i = 1;
         ArrayList list = new ArrayList();
         for (Roborder roborder:allRoborder){
             Map<String, Object> map = new HashMap<>();
-            map.put("roborderid",roborder.getRobbuildingid());
+            map.put("roborderid",i++);
             map.put("rob",robhousingService.getRobByRobid(roborder.getRobid()));
             map.put("user",userService.selectUserByUserid(roborder.getUserid()));
             map.put("room",roborder.getRobbuildingid().toString()+"号楼"+roborder.getRobunitid().toString()+"单元"+roborder.getRobroom().toString());
