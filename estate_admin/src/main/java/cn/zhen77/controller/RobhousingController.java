@@ -27,18 +27,44 @@ import java.util.List;
 public class RobhousingController {
     @Autowired
     private RobhousingService robhousingService;
+
     @RequestMapping("/getAllRobHousing")
     public String getAllRobHousing(){
         List<Robhousing> allRob = robhousingService.getAllRob();
         ReturnObject returnObject = new ReturnObject(allRob);
         return JSONObject.toJSONString(returnObject);
     }
-    @RequestMapping("insertRobhousing")
+    @RequestMapping("/insertRobhousing")
     public String insertRobhousing(String robtype, String estatename, String estateaddress, Double estateprice, Double roballprice, Double robdiscount, Integer robarea, String robbuildingid, String robunitid, String robroomid, String robphone, String information, String reason, Integer lastnum, Integer lastday, String robimg) {
         Robhousing robhousing = new Robhousing(robtype, estatename, estateaddress, estateprice, roballprice, robdiscount, robarea, robbuildingid, robunitid, robroomid,  robphone,  information, reason, lastnum, lastday, robimg);
         boolean b = robhousingService.insertRob(robhousing);
         ReturnObject returnObject = new ReturnObject(b);
         return JSONObject.toJSONString(returnObject);
+    }
+    @RequestMapping("/getRobByRobid")
+    public String getrob(Integer robid){
+        Robhousing robByRobid = robhousingService.getRobByRobid(robid);
+        ReturnObject returnObject = new ReturnObject(robByRobid);
+        return JSONObject.toJSONString(returnObject);
+    }
+    @RequestMapping("/addRob")
+    public String addRobhousing(String robtype,String estatename,
+                                String estateaddress,
+                                Double estateprice,
+                                Double roballprice,
+                                Double robdiscount,
+                                Integer robarea ,
+                                String robbuildingid,
+                                String robunitid,
+                                String robroomid,
+                                String robphone,
+                                String information,
+                                String reason,
+                                Integer lastnum,
+                                Integer lastday){
+        Robhousing robhousing = new Robhousing(robtype,estatename,estateaddress,estateprice,roballprice,robdiscount,robarea,robbuildingid,robunitid,robroomid,robphone,information,reason,lastnum,lastday);
+        boolean b = robhousingService.insertRob(robhousing);
+        return JSONObject.toJSONString(new ReturnObject("ok"));
     }
 
 }

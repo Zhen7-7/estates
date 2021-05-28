@@ -74,6 +74,24 @@ public class Robhousing implements Serializable {
      */
     private String robbuildingid;
 
+    public Robhousing(String robtype, String estatename, String estateaddress, Double estateprice, Double roballprice, Double robdiscount, Integer robarea, String robbuildingid, String robunitid, String robroomid, String robphone, String information, String reason, Integer lastnum, Integer lastday) {
+        this.robtype = robtype;
+        this.estatename = estatename;
+        this.estateaddress = estateaddress;
+        this.estateprice = estateprice;
+        this.roballprice = roballprice;
+        this.robdiscount = robdiscount;
+        this.robarea = robarea;
+        this.robbuildingid = robbuildingid;
+        this.robunitid = robunitid;
+        this.robroomid = robroomid;
+        this.robphone = robphone;
+        this.information = information;
+        this.reason = reason;
+        this.lastnum = lastnum;
+        this.lastday = lastday;
+    }
+
     /**
      * 单元号（几单元）
      */

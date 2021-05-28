@@ -1,0 +1,70 @@
+<view wx:if="{{!success}}">
+  <form action="http://localhost:8080/register" method="post" name="mylogin" catchsubmit="formSubmit">
+  <view class='row'>
+              <view class="lable">账号：</view>
+              <view class='info'>
+                     <input type='text' maxlength="15" class= 'info_input info_username'  placeholder="请输入你的账号" name="username" />
+               </view>
+</view>
+<view class='row'>
+      <view class="lable">手机号：</view>
+        <view class='info'>
+              <input type='number' maxlength="11" class= 'info_input info_phone' placeholder="请输入你的手机号" name="phone"/>
+        </view>
+</view>
+  <view class='row'>
+      <view class="lable">真实姓名：</view>
+        <view class='info'>
+              <input type='text' class= 'info_input info_realname'  placeholder="请输入你的真实姓名" name="realname"/>
+        </view>
+</view>
+  <view class='row'>
+      <view class="lable">身份证号：</view>
+        <view class='info'>
+              <input type='idcard' maxlength="18" class= 'info_input info_identity'  placeholder="请输入你的身份证号" name="identity"/>
+        </view>
+</view>
+<view class='row'>
+  <view class="lable">性别：</view>
+    <view class='info'>
+      <radio-group class= 'info_input' name="gender">
+          <radio class="box" value='男'>男</radio>
+          <radio class="box" value='女'>女</radio>
+      </radio-group>
+      </view>
+</view>
+  <view class='row'>
+       <view class="lable">地址：</view>
+         <view class='info_input'>
+              <view class="profile-items house-id">
+                     <!-- <text class="word">城市</text> -->
+                     <picker name = "province" bindchange="changeProvince" value="{{provinceArray[provinceIndex]}}" range="{{provinceArray}}">
+                         <view class="building">
+                             {{provinceArray[provinceIndex]}}
+                         </view>
+                     </picker>
+                     <picker name = "city" bindchange="changeCity" value="{{city[cityIndex]}}" range="{{city}}">
+                         <view class="unit">
+                             {{city[cityIndex]}}
+                         </view>
+                     </picker>
+                     <!-- <picker name = "roomNumber" bindchange="changeRoom" value="{{roomArray[roomIndex]}}" range="{{roomArray}}">
+                         <view class="room">
+                             {{roomArray[roomIndex]}}县
+                         </view>
+                     </picker>       -->
+              </view>
+          </view>
+  </view>
+
+
+
+  <button class='submit' formType='submit'>保存</button>
+  <!-- <navigator url="../../pages/login/index"><view class='login'>已经注册,我要登录</view></navigator> -->
+  </form>
+  </view>
+  <view class = 'success' wx:if="{{success}}">
+  <view class='cheer'><icon type="success" size="24"/> 恭喜您完善成功</view>
+  <button type = "default" class = 'return' bindtap='return_home'>点击返回主页</button>
+  </view>
+ 

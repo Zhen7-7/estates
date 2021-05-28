@@ -67,7 +67,7 @@ public class Roborder implements Serializable {
     /**
      * 享受优惠
      */
-    private Double discount;
+    private Double discount = 0.8;
 
     public Roborder(Integer robid, Integer userid, Integer robbulidingid, Integer robunitid, Integer robroom, String username, String phone, Double discount) {
         this.robid = robid;
@@ -150,6 +150,16 @@ public class Roborder implements Serializable {
 
     public void setDiscount(Double discount) {
         this.discount = discount;
+    }
+
+    public Roborder(Integer robid, Integer userid, Integer robbuildingid, Integer robunitid, Integer robroom, String username, String phone) {
+        this.robid = robid;
+        this.userid = userid;
+        this.robbuildingid = robbuildingid;
+        this.robunitid = robunitid;
+        this.robroom = robroom;
+        this.username = username;
+        this.phone = phone;
     }
 
     @Override

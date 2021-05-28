@@ -1,0 +1,47 @@
+
+<block
+wx:for="{{robhousing}}" 
+wx:key="robhousingid"
+>
+  <view
+  wx:if="{{index==id}}"
+ >
+    <image class="img" src="{{item.robimg}}"></image>
+    <view class="title">{{item.estatename}}_房产</view>
+    <view class="last_time">
+      <view class="common1">剩余抢购天数 ：还剩{{item.lastday}}天</view>
+      <view class="common1">目前仅剩{{item.lastnum}}套</view>
+    </view>
+    <view class="preferential">限时: 打{{item.robdiscount*10}}折        先到先得！！</view>
+    <navigator class="" url="/pages/rob/robSuccess/index" >
+      <button class="knew_detail" bindtap='handleRob'>立即预约</button>
+    </navigator>
+    <view class="common">该房价：{{item.roballprice}}w/m²</view>
+    <!-- <view class="common">区域房价：{{item.estateprice}}</view> -->
+    <view class="common">地理位置：{{item.estateaddress}}</view>
+    <view class="common">面积：{{item.robarea}}</view>
+    <view class="common">楼栋：{{item.robbuildingid}}</view>
+    <view class="common">房号：{{item.robroomid}}</view>
+    <view class="common">房型：{{item.robtype}}</view>
+    <view class="common">售楼处咨询电话：{{item.robphone}}</view>
+    <view class="common">推荐理由:{{item.reason}}</view>
+    <view class="common">情况说明:{{item.information}}</view>
+    
+    <view class="split"></view>
+    <view class="split"></view>
+    
+    <view class="common">\n</view>
+    <view class="common">\n</view>
+    <view class="common">\n</view>
+    <view class="common">\n</view>
+    
+    </view>
+    <view class='left iconfont .icon-jiantou1' bindtap="bindleft"></view>
+    <view class='right  iconfont .icon-jiantou' bindtap="bindright"></view>
+  </block>
+
+
+
+
+     
+

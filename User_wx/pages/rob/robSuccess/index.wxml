@@ -1,0 +1,6 @@
+<view class='main'>
+  <view class='top'>恭喜您预订成功</view>
+  <view class='bottom'>等待工作人员与您联系</view>
+</view>
+<button class="btn1" bindtap="return1">我再看看</button>
+<button class="btn2" bindtap="return2">返回首页</button>

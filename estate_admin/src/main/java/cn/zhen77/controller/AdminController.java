@@ -32,21 +32,19 @@ import java.util.List;
 public class AdminController {
     @Autowired
     AdminService adminService;
-    @RequestMapping("/getAdmin")
+    /*@RequestMapping("/getAdmin")
     public String login(@RequestParam("adminname") String adminname, @RequestParam("adminpassword") String adminpassword, HttpSession session){
         Admin returnadmin = adminService.getAdminInfo(adminname);
-        Admin returnadmin1 = adminService.getAdminInfo("admin1");
         List<Admin> list = new ArrayList<>();
         list.add(returnadmin);
-        list.add(returnadmin1);
         //将用户数据写入到session中
-//        session.setAttribute("admin",returnadmin);
-//        ReturnObject returnObject = new ReturnObject(returnadmin);//设计模式
-//        return JSONObject.toJSONString(returnObject);
-        ReturnObject returnObject = new ReturnObject(list);//设计模式
+        session.setAttribute("admin",returnadmin);
+        ReturnObject returnObject = new ReturnObject(returnadmin);//设计模式
         return JSONObject.toJSONString(returnObject);
+//        ReturnObject returnObject = new ReturnObject(list);//设计模式
+//        return JSONObject.toJSONString(returnObject);
 
-    }
+    }*/
     @RequestMapping("/test")
     public String test(  HttpSession session){
         Admin returnadmin = adminService.getAdminInfo("admin");
@@ -55,6 +53,22 @@ public class AdminController {
         ReturnObject returnObject = new ReturnObject(returnadmin);//设计模式
         return JSONObject.toJSONString(returnObject);
 
+    }
+    @RequestMapping("/login")
+    public String login(String adminname,String adminpassword){
+        System.out.println(adminpassword);
+        Admin adminInfo = null;
+
+        adminInfo = adminService.getAdminInfo(adminname);
+        System.out.println(adminInfo);
+        System.out.println("111"+adminpassword);
+        System.out.println("222"+adminInfo.getAdminpassword());
+
+        if (adminpassword.equals(adminInfo.getAdminpassword())){
+            return JSONObject.toJSONString(new ReturnObject("登陆成功",true));
+        }else{
+            return JSONObject.toJSONString(new ReturnObject("密码错误",false));
+        }
     }
 
    /* @RequestMapping("/user/info")

@@ -36,7 +36,6 @@ public class UserController {
 
     @RequestMapping("/updateUserInfo")
     public String updateUserInfo(Integer userid,String username,String phone,String realname,String identity,String address,String gender,String headimg){
-//        User user = new User("孙朕","123456","132454644","suznhen","46546545465","china");
         User user = new User(userid,username,phone,realname,identity,address,gender,headimg);
         boolean  result = userService.updateUserInfo(user);
         ReturnObject returnObject = new ReturnObject(result);

@@ -1,0 +1,46 @@
+<view>
+  <view class="revice_address_row">
+      <view class="address_btn" wx:if="{{!userinfo.realname}}">
+          <navigator url="/pages/mine/index">
+            <button  type="primary" plain >
+                请先完善信息
+            </button>
+          </navigator>
+      </view>
+      <view wx:else class="user_info_row"> 
+          <view class="user_info">
+             <view>真实姓名:{{userinfo.realname}}</view>
+             <view>居住地：{{userinfo.city}}</view>
+          </view>
+      </view>
+  </view>
+  <view class="cart_content">
+      <view class="cart_title">
+          心愿单
+      </view>
+      <view class="cart_main">
+            <view class="cart_item"
+            wx:for='{{cart}}'
+            wx:key='housingid'
+         
+            >
+                <!--商品图片-->
+                <view class="cart_img_wrap">   
+                    <image class="" src="{{item.housingimg.housingimg1}}" mode="widthFix"  />
+                </view>
+                <!--商品信息-->
+                <view class="cart_info_wrap">  
+                        <view class="goods_name">{{item.housingtype}}</view> 
+                        <image class="delete"  data-housingid='{{item.housingid}}' bindtap='delete' src="../../icons/shanchu.png"></image>
+                        <view class="goods_price_wrap">
+                        <view class="goods_price">{{item.housingprice*item.housingarea*10000}}元</view> 
+                        <view class="cart_num_tool">    
+                        <navigator url="/pages/detail_floor/index?buildingid={{item.housingid}}">  <view class="goods_num">了解详情</view> </navigator>
+                        </view> 
+                    </view> 
+                </view>
+            </view>
+      </view>
+  </view>
+
+</view>

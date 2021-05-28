@@ -1,0 +1,112 @@
+.title_wrap {
+  padding: 30rpx;
+}
+.title_wrap .title {
+  font-size: 60rpx;
+  font-weight: 500;
+}
+.title_wrap .lable_wrap {
+  margin: 20rpx 0;
+  display: flex;
+}
+.title_wrap .lable_wrap .lable {
+  margin-right: 15rpx;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 6rpx 8rpx;
+}
+.title_wrap .detail_wrap {
+  display: flex;
+  margin-bottom: 15rpx;
+  color: #778899;
+  align-items: center;
+}
+.title_wrap .detail_wrap .price {
+  color: #FF4500;
+  font-size: 50rpx;
+  font-weight: 400;
+}
+.title_wrap .detail_wrap .price1 {
+  color: #FF4500;
+}
+.title_wrap .detail_wrap .num {
+  color: black;
+}
+.title_wrap .address_wrap {
+  background-color: #F5F5F5;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title_wrap .address_wrap .address_icon {
+  display: flex;
+  align-items: center;
+}
+.title_wrap .address_wrap .address_icon .icon {
+  height: 40rpx;
+  width: 40rpx;
+}
+.title_wrap .address_wrap .address_icon .address {
+  font-size: 30rpx;
+}
+.title_wrap .information {
+  margin-top: 15rpx;
+  display: flex;
+  justify-content: center;
+  font-size: 60rpx;
+}
+.content {
+  display: flex;
+  width: 100%;
+  height: 330rpx;
+  padding: 40rpx 25rpx;
+  border-top: 1px solid #bbb8b8;
+}
+.content .picture image {
+  width: 280rpx;
+  height: 260rpx;
+}
+.content .content_text {
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  width: 400rpx;
+  height: 260rpx;
+}
+.content .content_text .text1 {
+  flex: 1;
+  font-size: 40rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.content .content_text .text2 {
+  flex: 1;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.content .content_text .text2 .label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .content_text .text2 .price {
+  color: red;
+  font-size: 40rpx;
+  font-weight: 550;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content .content_text .text3 {
+  flex: 1;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+}

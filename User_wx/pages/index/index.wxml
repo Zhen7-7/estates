@@ -1,0 +1,45 @@
+<!-- <SearchInput></SearchInput> -->
+  <view class="index_swiper">
+        <swiper indicator-dots autoplay circular interval="3000">
+            <swiper-item >
+                    <image mode="widthFix" src="https://img0.baidu.com/it/u=3920715280,3388974999&fm=26&fmt=auto&gp=0.jpg"></image>   
+            </swiper-item>
+            <swiper-item >
+                    <image mode="widthFix" src="https://img1.baidu.com/it/u=1699400192,2183951081&fm=26&fmt=auto&gp=0.jpg"></image>   
+            </swiper-item>
+            <swiper-item >
+                    <image mode="widthFix" src="https://img1.baidu.com/it/u=1131791035,1692146553&fm=26&fmt=auto&gp=0.jpg"></image>   
+            </swiper-item>
+            <swiper-item >
+                    <image mode="widthFix" src="https://img1.baidu.com/it/u=3537022156,3523927063&fm=26&fmt=auto&gp=0.jpg"></image>   
+            </swiper-item>
+            <swiper-item >
+                    <image mode="widthFix" src="https://img0.baidu.com/it/u=3149315149,520947929&fm=26&fmt=auto&gp=0.jpg"></image>   
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="guess" >
+      猜你喜欢
+    </view>
+    <navigator 
+    wx:for="{{estate}}" 
+    wx:key="estateid"
+    url="/pages/detail/index?estateid={{item.estateid}}">
+    <view class="content">
+    <view class="picture">
+      <image  src="{{item.estateimg}}"></image>   
+    </view>
+    <view class="content_text">
+      <view class="text1">
+        {{item.estatename}}
+      </view>
+      <view class="text2">
+        <view class="label">剩余户数：{{item.estatelastnum}}</view>
+        <view class="price"> {{item.price}}w/m²</view> 
+      </view>
+      <view class="text3">
+       {{item.estateaddress}}
+      </view>
+    </view>
+  </view>
+  </navigator>

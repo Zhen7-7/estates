@@ -1,0 +1,69 @@
+
+page{
+  background: #F0F0F0 ;
+}
+.row{
+ margin-top: 20rpx;
+ margin-left: 20rpx;
+ margin-right: 20rpx;
+ overflow: hidden;
+ line-height: 100rpx;
+ border-bottom: 1rpx solid #ccc;
+ background: #fff;
+ display: flex;
+ justify-content: space-between;
+}
+.row  .lable{
+  /* display: flex;
+  justify-content:'center';
+  align-items: 'center'; */
+  /* background-color: red; */
+  color: #000;
+  /* width:100rpx; */
+  font-size:35rpx;
+  margin-left: 30rpx;
+}
+.info_input{
+  height: 100rpx;
+  margin-right: 150rpx;
+  color: #777;
+  /* float:right; */
+}
+.submit{
+ margin-top: 50rpx;
+ margin-left: 20rpx;
+ margin-right: 20rpx;
+ background: #00CCFF;
+  color: #FFFFFF;
+}
+.login{
+  float:right;
+  padding:25rpx;
+}
+.success{
+ background: #ffffff;
+
+}
+.cheer{
+ text-align: center;
+ line-height: 400rpx;
+ font-size: 60rpx;
+ position: relative;
+}
+.return{
+ margin: 20rpx;
+
+}
+.profile-items {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  margin-right:10rpx;
+}
+.house-id .building,
+.house-id .unit{
+    padding-right:40rpx;
+}
+.box{
+  margin-right:34px;
+}
